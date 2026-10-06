@@ -1,0 +1,226 @@
+:root {
+  color-scheme: light;
+  --paper: #f8f4eb;
+  --paper-deep: #f0e9db;
+  --ink: #35251e;
+  --muted: #6f5c50;
+  --line: #d9cbb9;
+  --accent: #a65e2e;
+  --accent-dark: #85451f;
+  --white: #fffdfa;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, h4, p, figure { margin: 0; }
+.skip-link {
+  position: absolute; top: -100px; left: 12px; z-index: 10; padding: 8px 12px;
+  background: var(--ink); color: white;
+}
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 3px solid #c7773c; outline-offset: 3px; }
+.site-header {
+  max-width: 1120px; margin: auto; padding: 22px 38px;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .05em; font-size: .88rem; }
+.brand-mark {
+  display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%;
+  background: var(--ink); color: #fff9ed; font-family: Georgia, serif; font-size: 1.1rem; line-height: 1;
+}
+.account { font-family: Georgia, serif; font-size: .85rem; color: var(--muted); text-decoration: none; }
+.account:hover { color: var(--accent); text-decoration: underline; }
+main { overflow: clip; }
+.hero {
+  max-width: 1044px; min-height: 590px; margin: auto; padding: 62px 38px 80px;
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(280px,390px); gap: clamp(32px,6vw,80px);
+  align-items: center;
+}
+.eyebrow { font-family: Georgia, "Noto Serif TC", serif; font-size: .78rem; letter-spacing: .16em; font-weight: bold; color: var(--accent-dark); }
+.hero .eyebrow { display: flex; align-items: center; gap: 9px; }
+.line { width: 27px; height: 1px; background: var(--accent); }
+.issue { color: #9b8b7b; letter-spacing: .11em; margin-left: 5px; }
+h1, h2, h3, .closing p { font-family: "Noto Serif TC", "Songti TC", Georgia, serif; font-weight: 700; letter-spacing: .025em; }
+h1 { font-size: clamp(2.7rem,5vw,4.4rem); line-height: 1.35; margin-top: 25px; }
+.underlined { color: var(--accent-dark); box-shadow: inset 0 -.13em 0 #eed1ad; }
+.hero-lead { max-width: 490px; color: var(--muted); margin-top: 23px; font-size: 1.04rem; line-height: 1.95; }
+.start-link {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 28px;
+  color: var(--accent-dark); font-weight: 700; text-decoration: none;
+  border-bottom: 1px solid currentColor; padding-bottom: 3px;
+}
+.start-link:hover { gap: 18px; }
+.hero-art {
+  width: 100%; max-width: 390px; justify-self: end; transform: rotate(1.5deg);
+  padding: 10px 10px 0; background: var(--white); border: 1px solid #e9dac7;
+  box-shadow: 12px 17px 0 #e9dccb;
+}
+.hero-art img { width: 100%; height: auto; }
+.hero-art figcaption { padding: 9px 5px 11px; font-size: .78rem; text-align: center; color: var(--muted); letter-spacing: .06em; }
+.quiz-section {
+  background: #fffaf1; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 72px 24px 76px; scroll-margin-top: 12px;
+}
+.section-heading { max-width: 760px; margin: 0 auto 32px; text-align: center; }
+.section-heading h2 { font-size: clamp(1.65rem,3vw,2.3rem); line-height: 1.45; margin: 9px 0 12px; }
+.section-heading > p:last-child { color: var(--muted); }
+.answers { max-width: 760px; margin: auto; display: grid; gap: 12px; }
+.answer {
+  background: var(--white); border: 1px solid var(--line); border-radius: 16px;
+  box-shadow: 0 3px 0 rgba(82,50,26,.035); overflow: hidden;
+}
+.answer[open] { border-color: #b88665; box-shadow: 0 14px 38px rgba(71,42,20,.07); }
+.answer summary { display: flex; align-items: center; gap: 20px; min-height: 95px; padding: 15px 22px; cursor: pointer; list-style: none; }
+.answer summary::-webkit-details-marker { display: none; }
+.answer summary:hover { background: #fcf7ee; }
+.answer[open] summary { background: #f7eee1; }
+.choice-letter {
+  flex: 0 0 52px; width: 52px; height: 52px; display: grid; place-items: center;
+  font: bold 1.35rem Georgia, serif; background: #f1e2cb; color: #92552e; border-radius: 15px;
+}
+.answer-b .choice-letter { background: #f4dfbd; color: #8b4c20; }
+.answer-c .choice-letter { background: #e3e5d0; color: #5f6642; }
+.answer-d .choice-letter { background: #e6ddd4; color: #654a3e; }
+.choice-title { display: flex; align-items: baseline; gap: 14px; flex: 1; min-width: 0; }
+.choice-title strong { font-family: "Noto Serif TC", "Songti TC", serif; font-size: 1.26rem; white-space: nowrap; }
+.choice-title small { color: var(--muted); font-size: .92rem; }
+.choice-open {
+  flex: 0 0 28px; width: 28px; height: 28px; position: relative; border: 1px solid #c9b7a3; border-radius: 50%;
+}
+.choice-open::before, .choice-open::after { content: ""; position: absolute; background: #865c41; border-radius: 1px; }
+.choice-open::before { width: 10px; height: 1.5px; top: 12px; left: 8px; }
+.choice-open::after { height: 10px; width: 1.5px; top: 8px; left: 12px; transition: transform .2s ease; }
+.answer[open] .choice-open::after { transform: rotate(90deg); }
+.answer-body { padding: 40px clamp(20px,6vw,65px) 54px; border-top: 1px solid var(--line); }
+.answer-label { color: var(--accent-dark); font-size: .8rem; font-weight: 700; letter-spacing: .18em; text-align: center; }
+.answer-body h3 { text-align: center; font-size: clamp(1.9rem,4vw,2.7rem); line-height: 1.45; margin: 11px 0 18px; }
+.result-intro { text-align: center; color: var(--muted); max-width: 570px; margin: 0 auto 31px; line-height: 1.95; }
+.reading { border-top: 1px solid var(--line); }
+.reading-block { display: grid; grid-template-columns: 38px minmax(0,1fr); gap: 17px; padding: 22px 0 24px; border-bottom: 1px solid var(--line); }
+.reading-number { font: italic 1.28rem Georgia, serif; color: var(--accent); }
+.reading-block h4 { font-size: 1.03rem; margin: 0 0 5px; letter-spacing: .02em; }
+.reading-block p { color: #56483f; line-height: 1.86; }
+.reading-block .quote {
+  color: var(--accent-dark); font-weight: 700; line-height: 1.8;
+  border-left: 3px solid #d7aa83; padding: 8px 0 8px 15px; margin: 10px 0 12px; background: #fcf5ea;
+}
+.parent-note {
+  display: flex; gap: 14px; margin: 27px 0 37px; padding: 18px 22px;
+  background: #f5eee3; border-radius: 8px; color: #5c493c; line-height: 1.85;
+}
+.parent-note strong { color: var(--ink); }
+.note-icon { color: var(--accent); font-size: 1.3rem; line-height: 1.2; padding-top: 2px; }
+.product-card {
+  display: grid; grid-template-columns: 160px minmax(0,1fr); gap: 25px;
+  align-items: center; border-top: 2px solid var(--ink); padding-top: 25px;
+}
+.product-photo { background: #f7f2e9; border: 1px solid #e9e0d4; border-radius: 8px; overflow: hidden; aspect-ratio: 2/3; display: grid; place-items: center; }
+.product-photo img { width: 100%; height: 100%; object-fit: contain; }
+.product-kicker { font-size: .78rem; letter-spacing: .08em; font-weight: 700; color: var(--accent-dark); }
+.product-copy h4 { font-family: "Noto Serif TC", "Songti TC", serif; font-size: 1.5rem; line-height: 1.4; margin: 4px 0 0; }
+.stones { color: #8b715f; font-size: .84rem; margin: 1px 0 12px; }
+.product-copy > p:not(.product-kicker):not(.stones) { color: #5e5148; font-size: .91rem; line-height: 1.8; }
+.shop-button {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 28px;
+  margin-top: 19px; padding: 10px 17px; min-height: 45px; background: var(--ink);
+  border-radius: 5px; color: white; text-decoration: none; font-weight: 700; font-size: .88rem;
+}
+.shop-button:hover { background: var(--accent-dark); }
+.coupon {
+  display: flex; align-items: center; justify-content: space-between; gap: 15px;
+  margin-top: 22px; padding: 14px 17px; background: #f4e4cb;
+  border: 1.5px dashed #bd7b4f; border-radius: 11px; color: #5a3422;
+}
+.coupon p { font-size: .9rem; line-height: 1.65; }
+.coupon code { font-family: Georgia, serif; font-weight: 700; color: #a45b34; font-size: 1.04rem; }
+.copy-coupon {
+  flex: 0 0 auto; min-width: 62px; min-height: 42px; padding: 8px 12px;
+  border: 1px solid #bd7b4f; background: #fffaf1; color: #85451f;
+  border-radius: 25px; font: inherit; font-size: .84rem; font-weight: 700; cursor: pointer;
+}
+.copy-coupon:hover { background: white; }
+.coupon-note { margin-top: 6px; color: #8b786c; font-size: .75rem; text-align: right; }
+.quiz-note { color: #85746a; font-size: .83rem; text-align: center; max-width: 660px; margin: 25px auto 0; }
+.closing { max-width: 700px; margin: auto; text-align: center; padding: 77px 24px 85px; }
+.closing-star { color: var(--accent); font-size: 1.8rem; line-height: 1; }
+.closing p { font-size: clamp(1.4rem,3.1vw,2rem); line-height: 1.8; margin: 15px 0 18px; }
+.signature { color: var(--accent-dark); font-family: "Noto Serif TC", serif; font-size: .9rem; letter-spacing: .09em; }
+.shop-overview {
+  background: #eee1cc; border-top: 1px solid #dfcfb7; border-bottom: 1px solid #dfcfb7;
+  padding: 72px 24px 78px; text-align: center;
+}
+.shop-overview-inner { max-width: 690px; margin: auto; }
+.shop-overview-kicker { color: var(--accent-dark); font: bold .76rem Georgia, serif; letter-spacing: .18em; }
+.shop-overview h2 { font-size: clamp(1.85rem,3.7vw,2.7rem); line-height: 1.5; margin: 13px 0 18px; }
+.shop-overview h2 span { color: var(--accent-dark); box-shadow: inset 0 -.16em 0 #dcc29f; }
+.shop-overview-copy { color: #645246; font-size: .96rem; line-height: 1.95; }
+.shop-overview-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 24px;
+  min-height: 52px; margin: 28px auto 0; padding: 11px 25px; border-radius: 7px;
+  background: #593826; color: #fffaf1; font-weight: 700; text-decoration: none;
+  box-shadow: 4px 4px 0 #c7ac89;
+}
+.shop-overview-button:hover { background: var(--accent-dark); }
+.shop-overview-note { color: #897361; font-size: .8rem; margin-top: 15px; }
+.site-footer {
+  border-top: 1px solid var(--line); max-width: 1120px; margin: auto; padding: 26px 38px 35px;
+  display: flex; justify-content: space-between; gap: 24px; color: var(--muted); font-size: .78rem;
+}
+.site-footer a { text-underline-offset: 2px; }
+@media (max-width: 760px) {
+  .site-header { padding: 16px 18px; }
+  .account { font-size: .78rem; }
+  .hero { display: flex; flex-direction: column; min-height: 0; gap: 33px; padding: 50px 22px 60px; text-align: center; }
+  .hero .eyebrow { justify-content: center; }
+  .hero-copy { width: 100%; }
+  h1 { font-size: clamp(2.4rem,9vw,3.6rem); margin-top: 18px; }
+  .hero-lead { max-width: 500px; margin: 18px auto 0; font-size: .98rem; line-height: 1.85; }
+  .start-link { margin-top: 18px; }
+  .hero-art { width: min(72vw,290px); margin-right: 10px; transform: rotate(1deg); box-shadow: 9px 12px 0 #e9dccb; }
+  .quiz-section { padding: 54px 16px 60px; }
+  .section-heading { margin-bottom: 27px; }
+  .section-heading > p:last-child { font-size: .91rem; }
+  .answer summary { min-height: 79px; padding: 12px 16px; gap: 13px; }
+  .choice-letter { flex-basis: 44px; width: 44px; height: 44px; border-radius: 12px; font-size: 1.2rem; }
+  .choice-title { display: block; line-height: 1.4; }
+  .choice-title strong { font-size: 1.14rem; display: block; }
+  .choice-title small { display: block; font-size: .84rem; }
+  .answer-body { padding: 32px 20px 39px; }
+  .reading-block { gap: 10px; grid-template-columns: 28px minmax(0,1fr); }
+  .product-card { grid-template-columns: 104px minmax(0,1fr); gap: 15px; align-items: start; }
+  .product-copy h4 { font-size: 1.3rem; }
+  .product-kicker { line-height: 1.5; letter-spacing: .02em; }
+  .shop-button { gap: 10px; }
+  .shop-overview { padding: 58px 20px 63px; }
+  .shop-overview-copy br { display: none; }
+  .shop-overview-button { width: min(100%, 300px); }
+  .site-footer { flex-direction: column; padding: 25px 20px 32px; gap: 2px; }
+}
+@media (max-width: 420px) {
+  .brand { font-size: .76rem; gap: 8px; }
+  .brand-mark { width: 27px; height: 27px; }
+  .account { font-size: .7rem; }
+  .product-card { grid-template-columns: 88px minmax(0,1fr); gap: 12px; }
+  .product-copy { min-width: 0; }
+  .product-copy h4 { font-size: 1.22rem; }
+  .stones { font-size: .77rem; line-height: 1.5; }
+  .product-copy > p:not(.product-kicker):not(.stones) { font-size: .84rem; }
+  .shop-button { width: 100%; margin-top: 12px; padding: 9px 10px; font-size: .83rem; gap: 6px; white-space: nowrap; }
+  .coupon { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .choice-open::after { transition: none; }
+}
