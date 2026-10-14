@@ -1,0 +1,147 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fcf8f0"><meta name="description" content="選一個日常物品，看看妳在婚姻裡想被怎麼陪伴，K媽的關係小測驗與水晶選物"><title>妳在婚姻裡最需要什麼｜K媽的小測驗</title><style>:root {
+  color-scheme: light;
+  --paper: #fcf8f0;
+  --paper-deep: #f5ecdd;
+  --ink: #38251e;
+  --muted: #6d594e;
+  --line: #e2d4c4;
+  --accent: #8f563c;
+  --yellow: #f4d583;
+  --pink: #e8a39f;
+  --blue: #9dbbd2;
+  --green: #b0b99a;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif; line-height: 1.7; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+button { font: inherit; }
+img { max-width: 100%; display: block; }
+:focus-visible { outline: 3px solid #dc8e5b; outline-offset: 4px; }
+.skip-link { position: absolute; top: -100px; left: 12px; z-index: 10; background: #fff; padding: 10px 15px; }
+.skip-link:focus { top: 12px; }
+.site-header { max-width: 1200px; margin: auto; min-height: 72px; padding: 15px clamp(20px,4vw,46px); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 750; letter-spacing: .03em; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; color: #fffaf2; background: var(--accent); border-radius: 11px 8px 12px 9px; font: 700 22px Georgia, serif; transform: rotate(-6deg); }
+.social-link { color: var(--muted); text-decoration-thickness: 1px; text-underline-offset: 4px; font-size: .84rem; white-space: nowrap; }
+.social-link:hover { color: var(--accent); }
+.hero { max-width: 1200px; min-height: 470px; margin: auto; padding: 38px clamp(22px,5vw,60px) 60px; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(22px,4vw,54px); }
+.eyebrow { color: var(--accent); text-transform: uppercase; font-size: .78rem; font-weight: 750; letter-spacing: .09em; }
+.eyebrow-line { display: inline-block; vertical-align: middle; width: 29px; border-bottom: 2px solid #c48668; margin: 0 8px 4px; transform: rotate(-3deg); }
+h1, h2, h3, h4, p { margin-top: 0; }
+h1, h2, h3, h4 { font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif; }
+.hero h1 { margin: 17px 0 20px; font-size: clamp(2.15rem,4.5vw,4.15rem); letter-spacing: -.025em; line-height: 1.38; }
+.crayon-underline { box-shadow: inset 0 -.18em 0 #f5d97e; white-space: nowrap; }
+.hero-lead { max-width: 480px; color: var(--muted); font-size: 1.01rem; line-height: 1.96; margin-bottom: 25px; }
+.start-link { display: inline-flex; min-height: 46px; align-items: center; gap: 19px; padding: 9px 17px; border: 1.5px solid #ad755a; border-radius: 4px 7px 5px 8px; text-decoration: none; color: var(--accent); font-weight: 700; }
+.start-link:hover { background: #fff2df; }
+.hero-art { width: 100%; height: auto; border-radius: 5px; }
+.quiz-section { max-width: 900px; padding: 65px 22px 75px; margin: auto; scroll-margin-top: 10px; }
+.section-heading { text-align: center; margin-bottom: 31px; }
+.section-number { color: var(--accent); font-size: .78rem; letter-spacing: .12em; font-weight: 750; margin-bottom: 11px; }
+.section-heading h2 { font-size: clamp(1.7rem,3.6vw,2.65rem); line-height: 1.45; margin-bottom: 12px; }
+.section-heading > p:last-child { color: var(--muted); font-size: .96rem; }
+.answers { display: grid; gap: 13px; }
+.answer { --answer-color: var(--pink); border: 1px solid var(--line); border-left: 6px solid var(--answer-color); background: #fffdfa; border-radius: 6px 13px 9px 6px; box-shadow: 5px 5px 0 rgba(123,89,64,.07); overflow: hidden; scroll-margin-top: 16px; }
+.answer-b { --answer-color: var(--blue); }
+.answer-c { --answer-color: #c1aad5; }
+.answer-d { --answer-color: var(--green); }
+.answer[open] { border-color: #d4beaa; border-left-color: var(--answer-color); }
+.answer summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 54px minmax(0,1fr) 28px; align-items: center; gap: 15px; min-height: 91px; padding: 14px 22px 14px 24px; }
+.answer summary::-webkit-details-marker { display: none; }
+.answer summary:hover { background: #fff9f1; }
+.letter { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--answer-color); font: 700 1.55rem Georgia, serif; transform: rotate(-5deg); }
+.choice strong { display: block; font-size: 1.16rem; line-height: 1.45; }
+.choice small { display: block; color: var(--muted); font-size: .83rem; margin-top: 2px; }
+.expand { width: 26px; height: 26px; border: 1px solid #b49b87; border-radius: 50%; position: relative; }
+.expand::before, .expand::after { content: ""; position: absolute; background: #795747; top: 11px; left: 6px; width: 12px; height: 2px; }
+.expand::after { transform: rotate(90deg); }
+.answer[open] .expand::after { transform: rotate(0deg); }
+.answer-body { border-top: 1px dashed #dfcbb8; padding: 34px clamp(20px,5vw,58px) 43px; }
+.answer-label { text-align: center; color: var(--accent); font-size: .8rem; font-weight: 750; letter-spacing: .1em; margin-bottom: 7px; }
+.answer-body h3 { text-align: center; font-size: clamp(1.65rem,3vw,2.25rem); line-height: 1.5; margin-bottom: 21px; }
+.result-intro { max-width: 640px; color: #524238; margin: 0 auto 28px; font-size: 1rem; line-height: 1.95; }
+.reading { border-top: 1px solid var(--line); }
+.reading-row { display: grid; grid-template-columns: 35px minmax(0,1fr); gap: 11px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.reading-row > span { color: var(--accent); font: 700 .89rem Georgia,serif; padding-top: 4px; }
+.reading-row h4 { font-size: 1.1rem; margin-bottom: 6px; }
+.reading-row p { color: #5a4a40; line-height: 1.9; font-size: .95rem; margin-bottom: 0; }
+.reading-row p + p { margin-top: 10px; }
+.reading-row .quote { color: #633c30; background: #f9f0e4; border-left: 3px solid #d3a18a; border-radius: 0 7px 7px 0; padding: 12px 15px; font-weight: 700; }
+.gentle-note { text-align: center; max-width: 600px; color: #725044; font-weight: 650; margin: 26px auto 32px; }
+.gentle-note::before { content: "✳"; display: block; font-size: 1.1rem; color: #bd8c67; margin-bottom: 5px; }
+.product-card { display: grid; grid-template-columns: 126px minmax(0,1fr); align-items: center; gap: 22px; background: #f7f0e5; border: 1px solid #dfcdbb; border-radius: 8px 17px 10px 14px; padding: 17px; }
+.product-photo { width: 126px; aspect-ratio: 2/3; background: #fffdf8; border: 1px solid #e4d7c9; border-radius: 5px; overflow: hidden; }
+.product-photo img { width: 100%; height: 100%; object-fit: contain; }
+.product-kicker { color: var(--accent); font-size: .76rem; letter-spacing: .05em; font-weight: 750; margin-bottom: 3px; }
+.product-copy h4 { font-size: 1.45rem; margin-bottom: 1px; }
+.stones { color: #806b59; font-size: .81rem; margin-bottom: 9px; }
+.product-copy > p:not(.product-kicker):not(.stones) { color: #5f5146; font-size: .9rem; line-height: 1.75; margin-bottom: 12px; }
+.shop-button { min-height: 48px; min-width: 170px; display: inline-flex; align-items: center; justify-content: space-between; gap: 12px; text-decoration: none; color: #fffaf1; background: #815038; padding: 10px 16px; border-radius: 5px 10px 7px 9px; font-weight: 750; font-size: .92rem; }
+.shop-button:hover, .shop-overview-button:hover { background: #5e3a2d; }
+.coupon { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 15px; padding: 13px 17px; background: #fffaf4; border: 1px dashed #d0ae8d; border-radius: 8px; }
+.coupon p { margin: 0; line-height: 1.6; font-size: .89rem; }
+.coupon code { color: #a25839; font: 700 1.05rem Georgia,serif; letter-spacing: .05em; }
+.coupon strong { color: #8e4937; }
+.copy-coupon { cursor: pointer; min-height: 44px; white-space: nowrap; border: 1px solid #b28263; background: #fff; color: #744938; padding: 8px 13px; border-radius: 7px; font-weight: 700; }
+.copy-coupon:hover { background: #fff0df; }
+.coupon-note { text-align: right; color: #8b796b; font-size: .76rem; margin: 7px 2px 0; }
+.quiz-note { text-align: center; color: var(--muted); font-size: .88rem; margin: 27px 0 0; }
+.closing { text-align: center; padding: 64px 20px 70px; background: #f7efe3; }
+.closing-doodle { color: #bc8a64; font-size: 1.5rem; }
+.closing p { font-family: "Noto Serif TC", "Songti TC", serif; font-size: clamp(1.35rem,2.7vw,1.85rem); line-height: 1.75; margin: 17px 0; }
+.signature { color: #755444; font-size: .92rem; }
+.shop-overview { text-align: center; padding: 77px 22px 88px; background: #e8d4bb; }
+.shop-overview-inner { max-width: 590px; margin: auto; }
+.shop-overview h2 { font-size: clamp(1.75rem,3vw,2.55rem); margin: 6px 0 11px; }
+.shop-overview p:not(.eyebrow) { color: #594839; line-height: 1.8; }
+.shop-overview-button { margin: 16px auto 0; display: inline-flex; justify-content: space-between; align-items: center; gap: 20px; padding: 12px 21px; min-height: 50px; color: white; background: #815038; text-decoration: none; border-radius: 5px 10px 7px 9px; font-weight: 750; }
+.shop-overview .shop-overview-note { font-size: .78rem; margin: 13px 0 0; }
+.site-footer { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .78rem; padding: 25px 30px 32px; }
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; gap: 21px; min-height: 0; padding: 37px 23px 36px; text-align: center; }
+  .hero h1 { font-size: clamp(2.1rem,8.7vw,3rem); margin: 12px 0 14px; }
+  .hero-lead { margin: 0 auto 18px; font-size: .96rem; }
+  .hero-art { width: min(100%,530px); margin: 1px auto 0; }
+  .quiz-section { padding-top: 39px; }
+  .section-heading { margin-bottom: 24px; }
+  .site-footer { flex-direction: column; gap: 5px; text-align: center; }
+}
+@media (max-width: 520px) {
+  .site-header { padding: 14px 19px; min-height: 62px; }
+  .brand { font-size: .89rem; }
+  .social-link { font-size: .73rem; }
+  .hero { padding: 31px 21px 27px; }
+  .eyebrow { font-size: .72rem; }
+  .hero-lead { line-height: 1.8; }
+  .quiz-section { padding: 40px 15px 55px; }
+  .section-heading h2 { font-size: 1.72rem; }
+  .section-heading > p:last-child { font-size: .88rem; }
+  .answer summary { grid-template-columns: 42px minmax(0,1fr) 25px; min-height: 81px; gap: 11px; padding: 11px 13px; }
+  .letter { width: 39px; height: 39px; font-size: 1.3rem; }
+  .choice strong { font-size: 1.02rem; }
+  .choice small { font-size: .78rem; }
+  .answer-body { padding: 28px 16px 34px; }
+  .answer-body h3 { font-size: 1.68rem; margin-bottom: 14px; }
+  .result-intro { font-size: .94rem; line-height: 1.85; }
+  .reading-row { grid-template-columns: 26px minmax(0,1fr); gap: 7px; }
+  .reading-row h4 { font-size: 1.04rem; }
+  .reading-row p { font-size: .92rem; }
+  .product-card { grid-template-columns: 89px minmax(0,1fr); gap: 12px; padding: 12px; align-items: start; }
+  .product-photo { width: 89px; }
+  .product-copy h4 { font-size: 1.19rem; }
+  .product-kicker { font-size: .69rem; letter-spacing: 0; }
+  .stones { font-size: .75rem; }
+  .product-copy > p:not(.product-kicker):not(.stones) { font-size: .82rem; line-height: 1.65; }
+  .shop-button { width: 100%; min-width: 0; font-size: .84rem; padding: 9px 11px; }
+  .coupon { padding: 11px 12px; gap: 8px; }
+  .coupon p { font-size: .79rem; }
+  .copy-coupon { font-size: .78rem; padding: 8px 9px; }
+  .shop-overview { padding: 58px 22px 67px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+[hidden]{display:none!important}.site-header{max-width:1040px}.quiz-home{max-width:720px;margin:30px auto 60px;padding:0 24px;text-align:center}.quiz-home h1{font-size:clamp(27px,5vw,42px);font-weight:600;line-height:1.4;margin:12px 0}.quiz-home .lead{color:var(--muted);margin:18px auto 25px;max-width:480px}.quiz-art{width:100%;max-width:480px;margin:0 auto;border-radius:12px}.pick-caption{font-size:14px;color:var(--muted);margin:22px 0 14px}.pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:480px;margin:auto}.pick-grid button{border:1px solid var(--line);border-radius:12px;background:#f5ecdd;color:var(--ink);padding:15px 18px;text-align:left;cursor:pointer;transition:.2s}.pick-grid button:hover{background:#e9dcca;transform:translateY(-2px)}.pick-grid b{font-size:24px;font-weight:500;margin-right:15px}.result{max-width:760px;margin:26px auto 70px;padding:0 24px}.back{border:0;background:none;color:var(--accent);padding:10px 0;cursor:pointer;margin-bottom:24px}.result h2{font-size:clamp(26px,4.8vw,38px);font-weight:600;line-height:1.45;margin:12px 0 22px}.result p{line-height:1.95}.intro{font-size:18px}.reading-block{padding:28px 0 12px;border-top:1px solid var(--line);margin-top:28px}.section-number{font-size:13px;color:var(--accent);letter-spacing:1px}.practice{padding:24px 26px;background:#f5ecdd;border-radius:14px;margin-top:24px}.result-quote{font-size:22px;text-align:center;margin:42px 0}.product-card{margin-top:28px;display:grid;grid-template-columns:110px 1fr;gap:24px;border-top:1px solid var(--line);padding:32px 0 18px;background:transparent;border-radius:0}.product-photo img{width:110px;height:150px;object-fit:contain;border-radius:10px}.product-copy h3{font-size:23px;margin:6px 0}.product-copy p{font-size:15px}.coupon{border-radius:12px;background:#f5ecdd;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.coupon code{font-size:26px;color:var(--accent);user-select:all}.copy-coupon{background:var(--accent);color:#fff;border:0;border-radius:8px;cursor:pointer;padding:12px 16px}.coupon-note{font-size:12px;color:var(--muted)}.site-footer{max-width:760px;margin:auto;padding:30px 24px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:block;text-align:center}.site-footer p{margin:8px 0}.bottom-back{margin-top:24px}.shop-bottom{display:inline-block;color:var(--accent);margin:12px 0}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:10px 20px;border-radius:9px;font-size:14px;z-index:5}@media(max-width:520px){.site-header{padding:16px 20px;min-height:60px}.social-link{font-size:12px}.quiz-home{margin-top:20px;padding:0 20px}.result{padding:0 22px}.product-card{grid-template-columns:85px 1fr;gap:18px}.product-photo img{width:85px;height:120px}.intro{font-size:17px}.practice{padding:20px}.result-quote{font-size:20px}.coupon{padding:16px}.copy-coupon{font-size:14px;padding:11px 12px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pick-grid button{transition:none}}.quiz-art{height:auto}.product-card{grid-template-columns:110px minmax(0,1fr);border-left:0;border-right:0;border-bottom:0}.product-photo{width:100%;aspect-ratio:auto;border:0;background:transparent}.product-copy{min-width:0}@media(max-width:520px){.product-card{grid-template-columns:85px minmax(0,1fr)}}@media(max-width:360px){.social-link{font-size:10px}.brand{gap:6px;font-size:12px}.site-header{padding:14px}}</style></head><body><header class="site-header"><a class="brand" href="#" aria-label="回到測驗首頁"><span class="brand-mark">K</span><span>K媽的小測驗</span></a><a class="social-link" href="https://www.instagram.com/lovekaren0316/" target="_blank" rel="noopener noreferrer">@lovekaren0316 ↗</a></header><main><section class="quiz-home"><p class="eyebrow">婚姻裡的小日常</p><h1>妳想被怎麼陪伴？</h1><p class="lead">日子久了，有時候連自己都說不清楚<br>最希望另一半為自己做什麼<br>先選一個有感覺的物品，聽聽自己的需要</p><img class="quiz-art" src="quiz.webp" alt="四個物品：A 雨傘、B 保溫杯、C 相機、D 抱枕" width="1122" height="1402"><p class="pick-caption">憑第一眼的感覺，點選下面的物品</p><div class="pick-grid"><button type="button" data-pick="A" aria-label="選擇 A 雨傘，查看解析"><b>A</b>雨傘 <span aria-hidden="true">→</span></button><button type="button" data-pick="B" aria-label="選擇 B 保溫杯，查看解析"><b>B</b>保溫杯 <span aria-hidden="true">→</span></button><button type="button" data-pick="C" aria-label="選擇 C 相機，查看解析"><b>C</b>相機 <span aria-hidden="true">→</span></button><button type="button" data-pick="D" aria-label="選擇 D 抱枕，查看解析"><b>D</b>抱枕 <span aria-hidden="true">→</span></button></div></section><article class="result" id="result-A" hidden aria-labelledby="title-A"><button class="back" type="button">← 重新選一個物品</button><p class="eyebrow">妳選了 A · 雨傘 ／ 一起承擔</p><h2 id="title-A" tabindex="-1">妳想要有人和妳一起扛</h2><div class="intro"><p>家裡有事情時，妳可能習慣先想辦法，等到都處理完了，才發現自己也很累</p><p>妳期待的，是另一半看見事情就一起動手，不用每次都等妳開口分配</p></div><section class="reading-block"><span class="section-number">01 — 在日常裡，妳可能有這種感覺</span><p>帳單要繳、東西要修、行程要安排，他一句「妳決定就好」，聽起來很尊重，卻也可能讓妳默默多做了好幾件事</p><p>所以比起驚喜禮物，一句「這件我來處理」反而更容易讓妳鬆一口氣</p></section><section class="reading-block"><span class="section-number">02 — 多留意自己一點</span><p>一直說「沒關係，我來就好」，久了容易讓對方以為妳真的不需要幫忙</p><p>把事情交出去，也讓他有機會學著負責，做法跟妳不同時，可以先談好底線，不必每一步都接手</p></section><section class="practice"><span class="section-number">03 — 這週試試看</span><p>挑一件妳最近最煩的事，直接說清楚需要他負責到哪一步</p><p>例如：「這週的採買交給你，缺什麼我列給你，買回來也麻煩你一起收好」</p></section><p class="result-quote">有人站在同一邊，日常的重量就能分一點出去</p><section class="product-card"><div class="product-photo"><img src="https://omnicrystal.store/wp-content/uploads/2026/04/商品圖rescale-1-scaled.jpg" alt="森靈水晶 夢想傳聲手鍊" width="120" height="160"></div><div class="product-copy"><p class="product-kicker">K媽的選物 · 給現在的妳</p><h3>夢想傳聲</h3><p class="stones">海藍寶 × 金耀石</p><p>官網以溝通與行動作為這款的設計意象，和妳想把需要說清楚、一起把事情完成的心情相呼應</p><p>清透的藍色搭配深色珠石，也能成為日常提醒：需要幫忙時，可以開口</p><a class="shop-button" href="https://omnicrystal.store/shop/destiny-crystals/zodiac/c3/?utm_source=Karen&utm_medium=message" target="_blank" rel="noopener noreferrer">看看這款水晶 ↗</a></div></section><section class="coupon"><p>K媽的專屬折扣碼<br><code>Karen</code></p><button class="copy-coupon" type="button">複製折扣碼</button></section><p class="coupon-note">結帳可試用 Karen，優惠是否適用與折抵金額以商店結帳頁為準</p><button class="back bottom-back" type="button">← 回到四個物品</button></article><article class="result" id="result-B" hidden aria-labelledby="title-B"><button class="back" type="button">← 重新選一個物品</button><p class="eyebrow">妳選了 B · 保溫杯 ／ 被惦記與照顧</p><h2 id="title-B" tabindex="-1">妳希望自己的小事也有人記得</h2><div class="intro"><p>妳可能很清楚家裡每個人喜歡吃什麼、什麼時候該休息，輪到自己卻常常隨便就好</p><p>妳期待的照顧很具體：有人記得妳還沒吃飯，也有人發現妳今天話變少了</p></div><section class="reading-block"><span class="section-number">01 — 在日常裡，妳可能有這種感覺</span><p>他買晚餐時順手帶了妳喜歡的那一份，出門前問妳外套帶了沒，或是看見妳累，主動把手上的事情接過去</p><p>這些小動作不適合拿去炫耀，卻會讓妳覺得：原來他有把我放在心上</p></section><section class="reading-block"><span class="section-number">02 — 多留意自己一點</span><p>如果總用「你應該知道吧」來等對方猜，妳可能會一次次失望</p><p>把偏好說出來不會減少心意，反而讓他知道怎麼照顧妳；他做到了，也可以讓他知道妳有感受到</p></section><section class="practice"><span class="section-number">03 — 這週試試看</span><p>說一個妳希望被記住的小習慣</p><p>例如：「我忙到沒吃飯的時候，你幫我留一份，我會很開心」</p><p>也練習接受照顧，不用立刻回一句「不用啦」</p></section><p class="result-quote">妳照顧了很多人，自己的需要也值得被記住</p><section class="product-card"><div class="product-photo"><img src="https://omnicrystal.store/wp-content/uploads/2025/12/五福改圖1-scaled.jpg" alt="森靈水晶 鴻運五福手鍊" width="120" height="160"></div><div class="product-copy"><p class="product-kicker">K媽的選物 · 給現在的妳</p><h3>鴻運五福</h3><p class="stones">粉晶貔貅 × 粉水晶 × 紅玉髓 × 紫水晶 × 紅虎眼</p><p>這款以粉晶貔貅為核心，搭配紅紫色系珠石，官網設計敘述包含和諧與安全感的意象</p><p>把它當作送給自己的小心意，提醒妳在照顧別人的同時，也替自己留一份溫柔</p><a class="shop-button" href="https://omnicrystal.store/shop/destiny-crystals/zodiac/d5/?utm_source=Karen&utm_medium=message" target="_blank" rel="noopener noreferrer">看看這款水晶 ↗</a></div></section><section class="coupon"><p>K媽的專屬折扣碼<br><code>Karen</code></p><button class="copy-coupon" type="button">複製折扣碼</button></section><p class="coupon-note">結帳可試用 Karen，優惠是否適用與折抵金額以商店結帳頁為準</p><button class="back bottom-back" type="button">← 回到四個物品</button></article><article class="result" id="result-C" hidden aria-labelledby="title-C"><button class="back" type="button">← 重新選一個物品</button><p class="eyebrow">妳選了 C · 相機 ／ 共享快樂</p><h2 id="title-C" tabindex="-1">妳想和他一起，重新找回好玩的感覺</h2><div class="intro"><p>結婚久了，聊天很容易剩下晚餐、帳單和家裡缺什麼</p><p>妳可能開始想念兩個人會亂聊、會笑到停不下來的時候，想留住一點屬於你們的快樂</p></div><section class="reading-block"><span class="section-number">01 — 在日常裡，妳可能有這種感覺</span><p>一起逛超市也可以很好玩，但如果每次都像在完成任務，日子就容易變得只有事情、沒有心情</p><p>妳在意的是兩個人有沒有一起投入：去沒吃過的小店、繞一條不同的路，甚至互拍一張很醜的照片，都可能讓妳開心</p></section><section class="reading-block"><span class="section-number">02 — 多留意自己一點</span><p>不用把每次約會都安排得很完整，也不用拿別人的浪漫當標準</p><p>如果活動選得太累，反而變成另一張待辦清單，留一點隨興，讓兩個人都能參與決定</p></section><section class="practice"><span class="section-number">03 — 這週試試看</span><p>這週各自提一個小活動，只挑一個真的想做的</p><p>可以約好散步二十分鐘不看手機，或一起找一家沒吃過的路邊攤</p><p>回家前問一句：「今天哪一段最好笑？」</p></section><p class="result-quote">一起過日子，也可以留點時間一起玩</p><section class="product-card"><div class="product-photo"><img src="https://omnicrystal.store/wp-content/uploads/2025/10/NO_03137-2-scaled.jpg" alt="森靈水晶 豐盛之光手鍊" width="120" height="160"></div><div class="product-copy"><p class="product-kicker">K媽的選物 · 給現在的妳</p><h3>豐盛之光</h3><p class="stones">太陽石 × 黃水晶 × 藍月光</p><p>太陽石搭配黃水晶與藍月光，呈現明亮而柔和的色彩，官網也以看見生活美好作為設計意象</p><p>和妳想重新發現日常樂趣的心情相呼應，提醒自己給快樂留一點位置</p><a class="shop-button" href="https://omnicrystal.store/shop/destiny-crystals/five-elements/a11/?utm_source=Karen&utm_medium=message" target="_blank" rel="noopener noreferrer">看看這款水晶 ↗</a></div></section><section class="coupon"><p>K媽的專屬折扣碼<br><code>Karen</code></p><button class="copy-coupon" type="button">複製折扣碼</button></section><p class="coupon-note">結帳可試用 Karen，優惠是否適用與折抵金額以商店結帳頁為準</p><button class="back bottom-back" type="button">← 回到四個物品</button></article><article class="result" id="result-D" hidden aria-labelledby="title-D"><button class="back" type="button">← 重新選一個物品</button><p class="eyebrow">妳選了 D · 抱枕 ／ 安心陪伴</p><h2 id="title-D" tabindex="-1">妳想有個可以不用逞強的地方</h2><div class="intro"><p>妳可能很能處理事情，卻也有不想說話、不想解釋的時候</p><p>妳期待另一半能容得下這些狀態，讓妳回到家，可以把「我沒事」先放下</p></div><section class="reading-block"><span class="section-number">01 — 在日常裡，妳可能有這種感覺</span><p>妳說今天很累，他沒有急著講大道理，也沒有追問為什麼又不開心，只是往旁邊挪一點，讓妳坐下來</p><p>有時候兩個人各做各的，偶爾聊一句，妳就覺得很舒服，不必時時把氣氛撐起來</p></section><section class="reading-block"><span class="section-number">02 — 多留意自己一點</span><p>想安靜不代表對方就能知道妳需要什麼</p><p>如果妳突然不說話，他可能會以為自己做錯了什麼，先說一句妳現在的狀態，可以讓彼此少一點猜測</p></section><section class="practice"><span class="section-number">03 — 這週試試看</span><p>試著說：「我今天有點累，不是生你的氣，我想安靜一下，你陪我坐著就好」</p><p>等休息夠了，再談需要處理的事；也問問他，累的時候希望怎麼被陪著</p></section><p class="result-quote">能安心沉默，也是一種舒服的親近</p><section class="product-card"><div class="product-photo"><img src="https://omnicrystal.store/wp-content/uploads/2025/10/NO_03117-2-scaled.jpg" alt="森靈水晶 感覺很好手鍊" width="120" height="160"></div><div class="product-copy"><p class="product-kicker">K媽的選物 · 給現在的妳</p><h3>感覺很好</h3><p class="stones">白水晶貔貅 × 青金石 × 藍月光</p><p>白水晶與兩種藍色系礦石搭配，色調清爽，官網以平和情緒與自信作為這款的設計意象</p><p>可以把它當作留給自己的休息提醒，今天沒有滿格，也能好好對待自己</p><a class="shop-button" href="https://omnicrystal.store/shop/destiny-crystals/five-elements/a7/?utm_source=Karen&utm_medium=message" target="_blank" rel="noopener noreferrer">看看這款水晶 ↗</a></div></section><section class="coupon"><p>K媽的專屬折扣碼<br><code>Karen</code></p><button class="copy-coupon" type="button">複製折扣碼</button></section><p class="coupon-note">結帳可試用 Karen，優惠是否適用與折抵金額以商店結帳頁為準</p><button class="back bottom-back" type="button">← 回到四個物品</button></article></main><footer class="site-footer"><p>日子很普通，妳的需要也值得被放在心上 — K媽</p><a class="shop-bottom" href="https://omnicrystal.store/shop/?utm_source=Karen&amp;utm_medium=message" target="_blank" rel="noopener noreferrer">逛逛森靈水晶 ↗</a><p>這是一個輕鬆的自我觀察小練習，沒有標準答案，也不是心理診斷<br>水晶以設計與象徵意涵搭配，讓關係變舒服，還是要從日常的溝通與行動開始</p></footer><div class="toast" role="status" hidden></div><script>const home=document.querySelector('.quiz-home'),results=[...document.querySelectorAll('.result')];
+function route(){const key=location.hash.match(/^#r=([A-D])$/)?.[1]||new URLSearchParams(location.search).get('r')?.toUpperCase();const valid=['A','B','C','D'].includes(key);home.hidden=valid;results.forEach(r=>r.hidden=!(valid&&r.id==='result-'+key));window.scrollTo(0,0);if(valid)document.querySelector('#title-'+key).focus({preventScroll:true});}
+document.querySelectorAll('[data-pick]').forEach(b=>b.addEventListener('click',()=>{location.hash='r='+b.dataset.pick}));document.querySelector('.brand').addEventListener('click',e=>{e.preventDefault();history.pushState(null,'',location.pathname);route()});document.querySelectorAll('.back').forEach(b=>b.addEventListener('click',()=>{history.pushState(null,'',location.pathname);route();document.querySelector('[data-pick]').focus({preventScroll:true})}));window.addEventListener('hashchange',route);window.addEventListener('popstate',route);route();
+document.querySelectorAll('.copy-coupon').forEach(b=>b.addEventListener('click',async()=>{let ok=false;try{await navigator.clipboard.writeText('Karen');ok=true}catch{const t=document.createElement('textarea');t.value='Karen';t.style.cssText='position:fixed;opacity:0';document.body.append(t);t.select();try{ok=document.execCommand('copy')}catch{}t.remove()}b.textContent=ok?'已複製 Karen':'長按 Karen 複製';document.querySelector('.toast').textContent=ok?'折扣碼已複製':'請長按折扣碼 Karen 複製';document.querySelector('.toast').hidden=false;setTimeout(()=>{b.textContent='複製折扣碼';document.querySelector('.toast').hidden=true},2200)}));</script></body></html>
