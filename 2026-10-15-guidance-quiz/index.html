@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f4ec">
+  <meta name="description" content="孩子一出狀況，你腦中先冒出哪句話？選一句最像你的，看看責備背後藏著哪種擔心，帶走一句能陪孩子找到下一步的話">
+  <title>責備背後藏著哪種擔心｜K媽的小測驗</title>
+  <style>
+    :root {
+      --paper: #f8f4ec;
+      --card: #fffdf8;
+      --ink: #48352f;
+      --muted: #8b756b;
+      --line: #e9ddd1;
+      --peach: #cf8c76;
+      --peach-dark: #a85d4f;
+      --peach-soft: #f8eae3;
+      --sage: #788771;
+      --sage-soft: #eef2e9;
+      --shadow: 0 16px 44px rgba(96, 72, 54, .075);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif; line-height: 1.8; }
+    button { font: inherit; }
+    a { color: inherit; }
+    .page { max-width: 720px; margin: 0 auto; min-height: 100vh; padding: 0 22px 44px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 25px 2px 19px; gap: 12px; }
+    .brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; font-size: 13px; letter-spacing: .12em; font-weight: 650; }
+    .brand-mark { display: inline-grid; place-items: center; width: 31px; height: 31px; border: 1px solid #d5aea0; border-radius: 50%; background: #fffaf4; color: var(--peach-dark); font-family: Georgia, serif; font-size: 18px; font-style: italic; letter-spacing: 0; }
+    .top-note { color: var(--muted); font-size: 12px; letter-spacing: .08em; white-space: nowrap; }
+    .hero { overflow: hidden; background: var(--card); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+    .hero-copy { padding: 41px 48px 22px; }
+    .eyebrow { margin: 0 0 15px; color: var(--peach-dark); font-size: 12px; font-weight: 700; letter-spacing: .16em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .result-name, .quote-text { font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif; }
+    h1 { max-width: 560px; margin-bottom: 17px; font-size: clamp(28px, 5.5vw, 42px); line-height: 1.4; letter-spacing: .025em; font-weight: 600; }
+    .hero-lead { max-width: 555px; margin-bottom: 22px; font-size: 15px; color: #725e53; line-height: 1.95; }
+    .hero-art { height: 295px; position: relative; background: url("assets/kma-hero.webp") center 45% / cover no-repeat; background-color: #e9e6d8; }
+    .hero-art::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #f7f2e9 0%, rgba(247,242,233,.82) 15%, transparent 43%); }
+    .hero-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(80,62,45,.12), transparent 35%); }
+    .hero-caption { position: absolute; left: 48px; bottom: 25px; z-index: 1; color: #69554b; font-family: "Noto Serif TC", "Songti TC", serif; font-size: 16px; line-height: 1.8; letter-spacing: .06em; }
+    .quiz-card, .result-card { margin-top: 27px; padding: 36px 46px 42px; border: 1px solid var(--line); background: var(--card); border-radius: 24px; box-shadow: var(--shadow); }
+    .section-top { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 9px; }
+    .section-kicker { margin: 0; color: var(--peach-dark); font-size: 12px; font-weight: 700; letter-spacing: .15em; }
+    .counter { color: #a18c81; font-size: 12px; letter-spacing: .12em; }
+    h2 { margin-bottom: 7px; font-size: clamp(22px, 4vw, 29px); line-height: 1.55; letter-spacing: .02em; font-weight: 600; }
+    .section-intro { color: var(--muted); font-size: 14px; margin-bottom: 25px; }
+    .choices { display: grid; gap: 11px; }
+    .choice { width: 100%; min-height: 74px; display: flex; align-items: center; gap: 18px; padding: 13px 18px; text-align: left; border: 1px solid #e7d9cd; border-radius: 15px; background: #fffaf4; color: var(--ink); cursor: pointer; transition: border-color .2s, background .2s, transform .2s, box-shadow .2s; }
+    .choice:hover { transform: translateY(-2px); border-color: #c58f7c; background: #fff4ed; box-shadow: 0 7px 20px rgba(111,79,61,.08); }
+    .choice:focus-visible, .primary:focus-visible, .secondary:focus-visible, .text-button:focus-visible, .other-choice:focus-visible { outline: 3px solid #b06452; outline-offset: 3px; }
+    .choice-letter { flex: 0 0 38px; width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #e2c5b5; border-radius: 50%; color: var(--peach-dark); background: #fffdf9; font-family: Georgia, serif; font-size: 19px; line-height: 1; }
+    .choice-label { font-size: 17px; font-weight: 500; letter-spacing: .035em; }
+    .quiet-note { margin: 22px 0 0; text-align: center; color: #9b867a; font-size: 12px; }
+    .result-card[hidden], .quiz-card[hidden] { display: none; }
+    .result-card { scroll-margin-top: 20px; }
+    .result-head { display: flex; align-items: center; gap: 19px; padding-bottom: 25px; border-bottom: 1px solid var(--line); }
+    .result-badge { width: 59px; height: 59px; flex: 0 0 59px; display: grid; place-items: center; border-radius: 50%; background: var(--peach-soft); color: var(--peach-dark); font-family: Georgia, serif; font-size: 27px; }
+    .result-head h2 { margin: 3px 0 0; }
+    .result-section { padding-top: 26px; }
+    .result-name { margin-bottom: 14px; color: #6e4d41; font-size: 22px; line-height: 1.5; }
+    .result-body { margin: 0; color: #625248; font-size: 15px; line-height: 2; }
+    .prompt-line { margin: 27px 0 13px; color: var(--peach-dark); font-size: 13px; font-weight: 700; letter-spacing: .06em; }
+    .quote-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .quote { padding: 18px 19px 17px; border-radius: 15px; min-height: 144px; }
+    .quote.hurry { background: #f7f0ec; }
+    .quote.guide { background: var(--sage-soft); }
+    .quote-label { display: block; margin-bottom: 10px; color: #8a746b; font-size: 12px; letter-spacing: .08em; font-weight: 650; }
+    .quote.guide .quote-label { color: #687b63; }
+    .quote-text { margin: 0; font-size: 17px; line-height: 1.7; }
+    .practice { margin: 24px 0 0; padding: 18px 20px; border-left: 2px solid #9aa98f; background: #f8f9f4; color: #586150; font-size: 14px; line-height: 1.85; }
+    .practice strong { display: block; font-size: 12px; margin-bottom: 4px; letter-spacing: .1em; }
+    .other { border-top: 1px solid var(--line); margin-top: 29px; padding-top: 25px; }
+    .other h3 { margin-bottom: 12px; font-size: 14px; font-weight: 600; }
+    .other-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .other-choice { border: 1px solid #e5d6c9; border-radius: 999px; background: white; padding: 7px 12px; color: #765f53; cursor: pointer; font-size: 12px; }
+    .other-choice:hover { border-color: var(--peach); background: #fff5ef; }
+    .actions { display: flex; gap: 10px; margin-top: 27px; flex-wrap: wrap; }
+    .primary, .secondary { border-radius: 999px; padding: 11px 21px; min-height: 46px; cursor: pointer; font-size: 14px; font-weight: 600; }
+    .primary { background: var(--peach-dark); border: 1px solid var(--peach-dark); color: white; }
+    .primary:hover { background: #90493c; }
+    .secondary { background: transparent; border: 1px solid #d7c5b7; color: var(--ink); }
+    .secondary:hover { background: #fff5ec; }
+    .closing { padding: 37px 28px 20px; text-align: center; }
+    .closing p { margin: 0 auto 8px; max-width: 520px; color: #77665a; font-family: "Noto Serif TC", "Songti TC", serif; line-height: 2; font-size: 15px; }
+    footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; border-top: 1px solid #e7dbce; padding: 20px 3px 0; color: #907e73; font-size: 12px; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--peach-dark); text-decoration: underline; }
+    @media (max-width: 570px) {
+      .page { padding: 0 14px 35px; }
+      .topbar { padding: 17px 2px 14px; }
+      .top-note { font-size: 11px; }
+      .hero, .quiz-card, .result-card { border-radius: 19px; }
+      .hero-copy { padding: 29px 25px 13px; }
+      .hero-lead { font-size: 14px; margin-bottom: 16px; }
+      .hero-art { height: 220px; background-position: center 43%; }
+      .hero-caption { left: 24px; bottom: 16px; font-size: 13px; }
+      .quiz-card, .result-card { padding: 27px 22px 30px; margin-top: 15px; }
+      .choice { min-height: 67px; padding: 11px 14px; gap: 13px; }
+      .choice-label { font-size: 16px; }
+      .quote-pair { grid-template-columns: 1fr; }
+      .quote { min-height: unset; }
+      .closing { padding: 28px 12px 17px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .choice { transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="K媽小測驗首頁"><span class="brand-mark" aria-hidden="true">K</span> K媽的小測驗</a>
+      <span class="top-note">@lovekaren0316</span>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">親子對話・一個小練習</p>
+        <h1 id="page-title">孩子一出狀況<br>你腦中先冒出哪句話？</h1>
+        <p class="hero-lead">有時候擔心來得太快，說出口的話也跟著急了。選一句最像你的念頭，看看責備背後藏著哪種擔心。</p>
+      </div>
+      <div class="hero-art" role="img" aria-label="K媽和女兒在公園散步的插畫">
+        <span class="hero-caption">慢慢說，<br>陪孩子找到下一步</span>
+      </div>
+    </section>
+
+    <section id="quiz" class="quiz-card" aria-labelledby="quiz-title">
+      <div class="section-top"><p class="section-kicker">直覺選一句</p><span class="counter">01 / 01</span></div>
+      <h2 id="quiz-title">孩子出狀況時，你最先冒出哪一句？</h2>
+      <p class="section-intro">想像一個最近讓你著急的瞬間，選最接近你心裡的話</p>
+      <div class="choices" role="group" aria-label="測驗選項">
+        <button class="choice" type="button" data-choice="A"><span class="choice-letter" aria-hidden="true">A</span><span class="choice-label">會不會受傷</span></button>
+        <button class="choice" type="button" data-choice="B"><span class="choice-letter" aria-hidden="true">B</span><span class="choice-label">時間又要來不及</span></button>
+        <button class="choice" type="button" data-choice="C"><span class="choice-letter" aria-hidden="true">C</span><span class="choice-label">別人會怎麼看</span></button>
+        <button class="choice" type="button" data-choice="D"><span class="choice-letter" aria-hidden="true">D</span><span class="choice-label">又要我收拾了</span></button>
+      </div>
+      <p class="quiet-note">憑直覺選就好，沒有標準答案</p>
+    </section>
+
+    <section id="result" class="result-card" aria-labelledby="result-title" aria-live="polite" hidden>
+      <div class="result-head">
+        <span id="result-letter" class="result-badge" aria-hidden="true">A</span>
+        <div><p class="section-kicker">你的測驗結果</p><h2 id="result-title" tabindex="-1"></h2></div>
+      </div>
+      <div class="result-section">
+        <p id="result-name" class="result-name"></p>
+        <p id="result-body" class="result-body"></p>
+        <p class="prompt-line">下一次，可以把擔心說成一個孩子做得到的動作</p>
+        <div class="quote-pair">
+          <div class="quote hurry"><span class="quote-label">著急時，可能脫口而出</span><p id="result-hurry" class="quote-text"></p></div>
+          <div class="quote guide"><span class="quote-label">試著這樣說</span><p id="result-guide" class="quote-text"></p></div>
+        </div>
+        <div class="practice"><strong>給自己的小練習</strong><span id="result-practice"></span></div>
+      </div>
+      <div class="other"><h3>也想看看其他的擔心？</h3><div id="other-list" class="other-list"></div></div>
+      <div class="actions">
+        <button id="retry" class="primary" type="button">重新選一次</button>
+        <button id="copy-link" class="secondary" type="button">複製這個結果的連結</button>
+      </div>
+    </section>
+
+    <div class="closing"><p>我也會著急，也會說錯話<br>我們一起練習，把擔心說得更清楚</p></div>
+    <footer><span>© K媽的小測驗</span><a href="https://www.instagram.com/lovekaren0316/" target="_blank" rel="noopener noreferrer">@lovekaren0316 ↗</a></footer>
+  </main>
+  <script>
+    const RESULTS = {
+      A: {
+        title: '你先看見了危險', name: '你在意孩子的安全',
+        body: '看見孩子爬高或跑得太快，你的心可能比她更早往下一沉。害怕她受傷的那一秒，提醒容易變成責備。說出一個具體的落腳點，也讓她知道你在旁邊。',
+        hurry: '我不是叫妳小心一點嗎', guide: '右腳踩上面那格，我在下面',
+        practice: '先看清楚眼前的風險，再說一個位置、一個動作。'
+      },
+      B: {
+        title: '你先想到時間不夠了', name: '你扛著趕時間的壓力',
+        body: '快出門時，孩子每慢一步，你心裡的時間就又少了一點。你可能已經想著接下來的行程，她卻還卡在眼前這隻鞋。把「快點」換成第一步，兩個人比較能一起往前走。',
+        hurry: '快點啦，大家都在等妳', guide: '先坐下，左腳伸進這隻鞋',
+        practice: '挑一個當下能完成的小動作，說完留一點時間給孩子做。'
+      },
+      C: {
+        title: '你先在意別人的眼光', name: '你想讓孩子被好好看待',
+        body: '遇到長輩或不熟悉的人，你可能一邊顧孩子，一邊擔心旁人覺得她沒禮貌。孩子有時也在緊張。先告訴她眼前的人是誰，再示範一句簡單的招呼，會比較容易開口。',
+        hurry: '叫阿姨啊，怎麼沒禮貌', guide: '這是媽媽的朋友，我們一起說阿姨好',
+        practice: '先介紹對方，再陪孩子說第一句；也給她一點適應的時間。'
+      },
+      D: {
+        title: '你先想到還要收拾', name: '你也需要有人分擔',
+        body: '玩具散了一地、杯子又打翻時，你想到的可能是今天還沒做完的事。累的時候，一件小事也會讓人繃緊。把眼前的事分成兩份，孩子能參與，你也不用獨自扛完。',
+        hurry: '講幾次了，玩具還不收', guide: '妳把小車放進藍盒子，我來收積木',
+        practice: '說清楚孩子要收哪一樣，你自己收哪一樣，先從小範圍開始。'
+      }
+    };
+    const quiz = document.getElementById('quiz');
+    const result = document.getElementById('result');
+    const otherList = document.getElementById('other-list');
+    const choiceLabels = { A: '會不會受傷', B: '時間又要來不及', C: '別人會怎麼看', D: '又要我收拾了' };
+    function showResult(letter, scroll = true) {
+      const data = RESULTS[letter];
+      if (!data) return;
+      document.getElementById('result-letter').textContent = letter;
+      document.getElementById('result-title').textContent = data.title;
+      document.getElementById('result-name').textContent = data.name;
+      document.getElementById('result-body').textContent = data.body;
+      document.getElementById('result-hurry').textContent = data.hurry;
+      document.getElementById('result-guide').textContent = data.guide;
+      document.getElementById('result-practice').textContent = data.practice;
+      otherList.replaceChildren();
+      for (const key of Object.keys(RESULTS)) {
+        if (key === letter) continue;
+        const button = document.createElement('button');
+        button.type = 'button'; button.className = 'other-choice';
+        button.textContent = key + '　' + choiceLabels[key];
+        button.addEventListener('click', () => showResult(key));
+        otherList.append(button);
+      }
+      quiz.hidden = true; result.hidden = false;
+      const url = new URL(location.href); url.searchParams.set('result', letter); history.replaceState({ result: letter }, '', url);
+      if (scroll) { result.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); document.getElementById('result-title').focus({ preventScroll: true }); }
+    }
+    function resetQuiz() {
+      result.hidden = true; quiz.hidden = false;
+      const url = new URL(location.href); url.searchParams.delete('result'); history.replaceState({}, '', url);
+      quiz.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      quiz.querySelector('.choice').focus({ preventScroll: true });
+    }
+    document.querySelectorAll('[data-choice]').forEach(button => button.addEventListener('click', () => showResult(button.dataset.choice)));
+    document.getElementById('retry').addEventListener('click', resetQuiz);
+    document.getElementById('copy-link').addEventListener('click', async event => {
+      const button = event.currentTarget;
+      try { await navigator.clipboard.writeText(location.href); button.textContent = '連結已複製'; }
+      catch { button.textContent = '請複製網址列的連結'; }
+      setTimeout(() => { button.textContent = '複製這個結果的連結'; }, 2400);
+    });
+    const initial = new URL(location.href).searchParams.get('result')?.toUpperCase();
+    if (RESULTS[initial]) showResult(initial, false);
+  </script>
+</body>
+</html>
