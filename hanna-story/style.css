@@ -22,3 +22,7 @@
 
 /* Preserve the complete street-teaching photograph. */
 .story-photo.street-proof img{height:auto;aspect-ratio:1;object-fit:contain}
+
+/* Keep the story title readable on phones and simplify the final contact area. */
+.start-main{grid-template-columns:1fr}
+@media(max-width:760px){#story-title{font-size:clamp(22px,6vw,25px);line-height:1.6;letter-spacing:0}#story-title>span{display:block}#story-title>br{display:none}}
