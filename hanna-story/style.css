@@ -19,3 +19,6 @@
 @media(max-width:760px){.header-contact{gap:7px}.header-contact .contact-arrow{margin-left:4px}.line-icon{width:25px;height:25px;flex-basis:25px;padding:4px}.line-icon svg{width:17px;height:17px}.reveal-pending{transition-delay:0ms}}
 @media(prefers-reduced-motion:reduce){.reveal-pending{opacity:1!important;transform:none!important;transition:none!important}.section-nav a::after{transition:none!important}}
 @media print{.reveal-pending{opacity:1!important;transform:none!important}}
+
+/* Preserve the complete street-teaching photograph. */
+.story-photo.street-proof img{height:auto;aspect-ratio:1;object-fit:contain}
