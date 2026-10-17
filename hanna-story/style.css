@@ -117,3 +117,6 @@
 
 @media(max-width:760px){.hero-intro br{display:none}}
 @media(max-width:350px){.mobile-person .person-name{font-size:20px;white-space:nowrap}}
+
+.section-nav .nav-scroll a{color:var(--muted);font-weight:400}
+.section-nav .nav-scroll a:hover,.section-nav .nav-scroll a[aria-current="location"]{color:var(--accent)}
