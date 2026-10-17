@@ -79,6 +79,7 @@ if (dialog && typeof dialog.showModal === 'function') {
 
   const nav = document.querySelector('.section-nav');
   if (!nav) return;
+  const navScroller = nav.querySelector('.nav-scroll') || nav;
   const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
   const sections = links.map(link => document.getElementById(link.getAttribute('href').slice(1)));
   let activeId = null;
@@ -101,12 +102,12 @@ if (dialog && typeof dialog.showModal === 'function') {
         link.removeAttribute('aria-current');
       }
     });
-    if (!currentLink || nav.scrollWidth <= nav.clientWidth) return;
-    const box = nav.getBoundingClientRect();
+    if (!currentLink || !navScroller.contains(currentLink) || navScroller.scrollWidth <= navScroller.clientWidth) return;
+    const box = navScroller.getBoundingClientRect();
     const linkBox = currentLink.getBoundingClientRect();
     if (linkBox.left < box.left + 16 || linkBox.right > box.right - 16) {
-      nav.scrollTo({
-        left: Math.max(0, nav.scrollLeft + linkBox.left - box.left - 20),
+      navScroller.scrollTo({
+        left: Math.max(0, navScroller.scrollLeft + linkBox.left - box.left - 20),
         behavior: motionPreference.matches ? 'auto' : 'smooth'
       });
     }
