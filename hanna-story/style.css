@@ -114,3 +114,6 @@
   .hero .text-link{gap:8px;font-size:12px}
   .section-nav .nav-inner{grid-template-columns:minmax(0,1fr) 98px}
 }
+
+@media(max-width:760px){.hero-intro br{display:none}}
+@media(max-width:350px){.mobile-person .person-name{font-size:20px;white-space:nowrap}}
