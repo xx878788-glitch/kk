@@ -136,3 +136,27 @@ if (dialog && typeof dialog.showModal === 'function') {
   content.animate([{opacity:.3, transform:'translateY(6px)'}, {opacity:1, transform:'translateY(0)'}], {duration:240, easing:'cubic-bezier(0,0,.5,1)'});
  }, true);
 })();
+
+// Keep mobile chapter navigation out of the reading column until requested.
+(() => {
+ const nav = document.querySelector('.section-nav');
+ const button = nav && nav.querySelector('.chapter-toggle');
+ if (!button) return;
+ const setOpen = open => {
+  nav.classList.toggle('menu-open', open);
+  button.setAttribute('aria-expanded', String(open));
+ };
+ button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+ nav.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => setOpen(false)));
+ document.addEventListener('pointerdown', event => {if (!nav.contains(event.target)) setOpen(false);});
+ document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+   setOpen(false);
+   button.focus({preventScroll:true});
+  }
+ });
+ const breakpoint = window.matchMedia('(max-width: 760px)');
+ const closeOnResize = () => setOpen(false);
+ if (breakpoint.addEventListener) breakpoint.addEventListener('change', closeOnResize);
+ else if (breakpoint.addListener) breakpoint.addListener(closeOnResize);
+})();
