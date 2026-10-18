@@ -324,3 +324,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #79
  *,*:before,*:after{animation:none!important;transition:none!important}
  .reveal-pending{opacity:1!important;transform:none!important}
 }
+
+/* Keep navigation contrast and avoid isolated final words in headings. */
+.section-nav a.nav-start,.section-nav a.nav-start:hover,.section-nav a.nav-start[aria-current="location"]{color:#fff}
+h1,h2,h3,h4{text-wrap:balance}
