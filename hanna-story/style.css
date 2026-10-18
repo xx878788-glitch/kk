@@ -120,3 +120,207 @@
 
 .section-nav .nav-scroll a{color:var(--muted);font-weight:400}
 .section-nav .nav-scroll a:hover,.section-nav .nav-scroll a[aria-current="location"]{color:var(--accent)}
+
+/* Rounded UI, informed by Apple Store TW; Hanna's identity and content remain her own. */
+:root{
+ --paper:#f5f5f7;--white:#fff;--ink:#1d1d1f;--muted:#6e6e73;--line:#dedee3;
+ --accent:#386659;--pale:#e8eeeb;--dark:#203a33;--dark-muted:#d0dcd6;
+ --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display",system-ui,"PingFang TC","Helvetica Neue","Microsoft JhengHei",Arial,sans-serif;
+ --serif:var(--sans);
+ --radius-card:24px;--radius-section:36px;--shadow-card:2px 4px 12px rgba(0,0,0,.065);
+ --ease-soft:cubic-bezier(0,0,.5,1);
+}
+body{font-family:var(--sans);font-size:17px;line-height:1.85;text-rendering:optimizeLegibility}
+h1,h2,h3,h4{font-family:var(--sans);font-weight:600;letter-spacing:-.025em}
+h1{font-size:clamp(36px,4vw,52px);line-height:1.3}
+h2{line-height:1.4}
+p{letter-spacing:0}
+.brand-mark,.hero-facts strong,.portrait-caption>span,.chapter-index>span,.large-number,.course-number,.mobile-person .person-name{
+ font-family:var(--sans);font-style:normal
+}
+.brand-mark{font-weight:700;letter-spacing:-.08em;font-size:32px}
+.brand small{letter-spacing:.04em}
+.hero-intro{font-size:17px;line-height:1.9}
+.eyebrow,.small-label{letter-spacing:.08em}
+.hero-facts strong{font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.035em}
+.hero-facts{border-top-color:var(--line)}
+.hero-visual .portrait-frame{border-radius:32px;background:var(--pale)}
+.hero-visual:before,.hero-visual .vertical-note{display:none}
+.portrait-caption{border:0;border-radius:22px;padding:22px 26px;box-shadow:var(--shadow-card)}
+.portrait-caption>span{font-size:14px;font-weight:600}
+.header-contact{border:0;background:rgba(255,255,255,.8);padding:9px 16px;border-radius:999px;gap:9px;min-height:44px;box-shadow:0 1px 5px #00000005}
+.site-header{border-bottom:1px solid #00000005}
+.button{border-radius:999px;padding:15px 24px;font-size:15px;min-height:50px;gap:24px;transition:background .3s var(--ease-soft),box-shadow .3s var(--ease-soft),transform .3s var(--ease-soft)}
+.solid{background:var(--dark)}
+.solid:hover{background:#31554a;transform:translateY(-1px);box-shadow:0 6px 18px #203a3320}
+.button:active{transform:scale(.98)}
+.text-link{border:0;border-radius:999px;background:#e7ece9;padding:12px 18px;min-height:44px;gap:12px;font-size:14px;font-weight:500;transition:background .3s var(--ease-soft),transform .3s var(--ease-soft)}
+.text-link:hover{background:#dce5df;transform:translateY(-1px)}
+.section-nav{background:rgba(245,245,247,.84);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-block:0;box-shadow:0 1px 0 #0000000a}
+.section-nav .nav-start{border:0;border-radius:999px;background:var(--dark);color:white;font-size:13px;padding:10px 17px;box-shadow:none}
+.section-nav .nav-start::after{display:none}
+.section-nav .nav-start[aria-current="location"]{background:#31554a;color:white}
+.nav-scroll{-webkit-overflow-scrolling:touch}
+.story-chapter{background:var(--white);border:0;border-radius:28px;box-shadow:var(--shadow-card);padding:40px;margin:0 0 24px;grid-template-columns:200px minmax(0,1fr);gap:40px}
+.chapter-index>span{font-size:36px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
+.chapter-index p{font-size:14px}
+.chapter-index small{font-size:12px}
+.story-copy h3{font-size:25px;font-weight:600;letter-spacing:-.015em}
+.story-copy p,.life-note p:not(.eyebrow){font-size:17px;line-height:1.95;color:#515154}
+.story-copy p+p{margin-top:21px}
+.story-key{font-weight:600;color:var(--ink)}
+.story-quote{border:0;border-radius:28px;background:#e9efeb;overflow:hidden;padding:48px 44px 36px}
+.story-quote blockquote{font-family:var(--sans);font-size:26px;font-weight:500;line-height:1.65;letter-spacing:-.02em}
+.quote-mark{font-family:var(--sans);color:#b7c9bf}
+.story-photo{border-radius:28px;box-shadow:var(--shadow-card)}
+.story-photo figcaption p{font-family:var(--sans);font-size:26px;font-weight:500;line-height:1.6}
+.life-note{border:0;border-radius:28px;background:var(--white);padding:44px 44px 44px 280px;box-shadow:var(--shadow-card)}
+.life-note h3{font-size:30px;line-height:1.5}
+.academy-section,.teaching-section{width:min(1280px,calc(100% - 48px));margin-inline:auto;border-radius:var(--radius-section);overflow:hidden}
+.teaching-section{background:#e9eeeb}
+.academy-banner{border-radius:24px}
+.academy-banner figcaption p{font-family:var(--sans);font-weight:500}
+.curriculum-head h3,.course-aside h3{letter-spacing:-.02em}
+.course-notice{border:0;border-radius:18px;background:rgba(255,255,255,.07)}
+.large-number{font-weight:600;letter-spacing:-.05em;color:#d0dfd5}
+.course{border:1px solid #ffffff16;border-radius:22px;background:#ffffff07;margin-bottom:12px;padding:0 22px;transition:background .3s var(--ease-soft),border-color .3s var(--ease-soft)}
+.course:first-child{border:1px solid #ffffff16}
+.course[open]{background:#ffffff0e;border-color:#ffffff24}
+.course summary{padding-block:22px;gap:18px}
+.course-number{font-weight:500;color:#b9d5c6}
+.course-summary strong{font-weight:600}
+.course-tag,.course-notice strong,.eligibility>span{color:#b9d5c6}
+.toggle-icon{width:30px;height:30px;line-height:1;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#ffffff14;flex-shrink:0;transition:transform .3s var(--ease-soft),background .3s var(--ease-soft)}
+.eligibility{border-radius:16px;background:#142e26;padding:17px 19px}
+.support-card,.tool-feature,.feedback-image{border:0;border-radius:var(--radius-card);background:var(--white);box-shadow:var(--shadow-card)}
+.support-card,.tool-feature{transition:transform .3s var(--ease-soft),box-shadow .3s var(--ease-soft)}
+.support-copy h3,.tool-text h4{font-weight:600;letter-spacing:-.02em}
+.resource-image{background:#eef0ef}
+.zoom-label{border-radius:999px;padding:7px 12px}
+.tool-visual{background:#eef0ef}
+.classroom-grid figure{border-radius:24px}
+.classroom-grid figcaption p{font-weight:500}
+.feedback-image{padding:16px}
+.feedback-heading h3{font-family:var(--sans);line-height:1.6;font-weight:600}
+.start-copy h2{font-size:36px;line-height:1.4}
+.start-copy>p:not(.eyebrow){font-size:17px;line-height:1.9}
+.faq-layout{border-top-color:var(--line)}
+.faq details,.faq details:first-child{border:0;border-radius:20px;box-shadow:var(--shadow-card);background:var(--white);padding:0 22px;margin-bottom:12px;overflow:hidden}
+.faq summary{font-size:16px;font-weight:500;padding-block:22px}
+.faq .toggle-icon{background:#edf1ee;color:var(--accent)}
+.faq details>p{font-size:15px;line-height:1.9;padding-right:0}
+.site-footer{background:#ececef;border-top:0;border-radius:32px 32px 0 0}
+.image-dialog{border-radius:26px;box-shadow:0 24px 100px #0004}
+.dialog-toolbar{border-bottom:0;padding:15px 20px}
+.dialog-close{border-radius:999px;background:#eeeef0;padding:5px 14px}
+.dialog-body img{border-radius:14px}
+.image-dialog[open]{animation:soft-dialog .25s var(--ease-soft)}
+@keyframes soft-dialog{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}
+.reveal-pending{transform:translate3d(0,16px,0);transition:opacity .6s var(--ease-soft),transform .6s var(--ease-soft);transition-delay:var(--reveal-delay,0ms)}
+.reveal-pending.is-revealed,.reveal-pending:focus-within{opacity:1;transform:none}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #79a18e;outline-offset:5px;border-radius:12px}
+@media(hover:hover) and (pointer:fine){
+ .support-card:hover,.tool-feature:hover{transform:translateY(-3px);box-shadow:2px 8px 22px rgba(0,0,0,.095)}
+ .image-button:hover img{transform:scale(1.015)}
+}
+@media(max-width:1050px) and (min-width:761px){
+ .story-chapter{grid-template-columns:170px minmax(0,1fr);gap:28px;padding:32px}
+ .life-note{padding-left:230px}
+}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 40px)}
+ .header-inner{height:76px}
+ .brand{font-size:14px}
+ .brand-mark{font-size:29px}
+ .brand small{font-size:9px;letter-spacing:0}
+ .header-contact{font-size:11px;padding:8px 11px}
+ .header-contact .contact-arrow{margin-left:0}
+ .hero{gap:22px;padding-block:24px 32px}
+ .hero-visual .portrait-frame{border-radius:26px;aspect-ratio:1}
+ .mobile-person .person-name{font-family:var(--sans);font-size:25px;font-weight:600;letter-spacing:-.03em}
+ .mobile-person .person-role{font-size:12px}
+ .hero-copy h1{font-size:clamp(28px,7.4vw,30px);line-height:1.4;letter-spacing:-.035em}
+ .hero-intro{font-size:16px;line-height:1.85}
+ .hero-actions{gap:12px}
+ .hero .button{font-size:14px;padding:14px 20px;gap:16px}
+ .hero .text-link{font-size:13px;padding:13px 16px;gap:9px}
+ .hero-facts{padding-top:18px;gap:36px}
+ .hero-facts strong{font-size:27px}
+ .section-nav .nav-inner{grid-template-columns:minmax(0,1fr) 110px;height:58px}
+ .section-nav .nav-start{align-self:center;margin:7px 8px 7px 0;padding:10px 12px;gap:6px;font-size:12px;min-height:40px}
+ .section-nav .nav-scroll a{font-size:13px}
+ .section-nav a::after{bottom:11px}
+ .section-space{padding-block:48px}
+ h2,.start-copy h2{font-size:26px;line-height:1.45}
+ #story-title{font-size:clamp(22px,6vw,25px);line-height:1.5}
+ .section-lead{font-size:16px;line-height:1.85}
+ .story-chapter{grid-template-columns:minmax(0,1fr);gap:22px;padding:26px 22px 28px;border-radius:24px;margin-bottom:18px}
+ .chapter-index>span{font-size:27px}
+ .chapter-index p{font-size:13px}
+ .chapter-index small{font-size:11px}
+ .story-copy h3{font-size:22px;line-height:1.5;margin-bottom:19px}
+ .story-copy p,.life-note p:not(.eyebrow){font-size:16px;line-height:1.9}
+ .story-copy p+p{margin-top:19px}
+ .story-quote{border-radius:24px;padding:40px 24px 30px}
+ .story-quote blockquote{font-size:20px;line-height:1.75}
+ .story-photo{border-radius:24px}
+ .story-photo figcaption{padding:27px 24px}
+ .story-photo figcaption p{font-size:23px}
+ .life-note{border-radius:24px;padding:28px 24px}
+ .life-note h3{font-size:25px}
+ .academy-section,.teaching-section{width:calc(100% - 24px);border-radius:28px}
+ .academy-section .wrap,.teaching-section .wrap{width:calc(100% - 40px)}
+ .academy-banner{border-radius:20px}
+ .academy-banner figcaption{left:17px}
+ .academy-banner figcaption p{font-size:18px}
+ .course-aside{grid-template-columns:68px minmax(0,1fr);gap:16px}
+ .large-number{font-size:40px}
+ .course-aside h3{font-size:21px}
+ .course-notice{border-radius:16px}
+ .course{padding:0 17px;border-radius:20px}
+ .course summary{gap:13px}
+ .course-number{font-size:20px}
+ .course-summary strong{font-size:18px}
+ .course-summary small{font-size:14px}
+ .course-content{padding-left:0;font-size:15px}
+ .eligibility{padding:15px;font-size:14px}
+ .support-copy{padding:25px 23px 19px}
+ .support-copy h3{font-size:21px}
+ .support-copy p{font-size:16px}
+ .resource-image{background:transparent}
+ .resource-image img,.questions-image img{border-radius:16px;background:#eef0ef}
+ .tool-visual{background:transparent}
+ .tool-visual img{border-radius:16px}
+ .classroom-grid{grid-template-columns:minmax(0,1fr);gap:18px}
+ .classroom-grid .classroom-main{grid-column:auto}
+ .classroom-grid img,.classroom-grid .classroom-main img{height:auto;aspect-ratio:4/3;object-fit:cover;min-height:0}
+ .classroom-grid figure{border-radius:22px}
+ .classroom-grid figcaption{bottom:17px;left:18px}
+ .classroom-grid figcaption p,.classroom-main figcaption p{font-size:19px}
+ .classroom-grid figcaption>span{font-size:11px}
+ .feedback-image{padding:12px;border-radius:20px}
+ .feedback-caption{font-size:12px}
+ .feedback-heading h3{font-size:25px}
+ .start-copy>p:not(.eyebrow){font-size:16px}
+ .start-copy .button{font-size:14px;padding:15px 20px;gap:16px}
+ .faq details,.faq details:first-child{padding:0 19px;border-radius:20px}
+ .faq summary{font-size:15px;gap:12px}
+ .faq .toggle-icon{width:28px;height:28px}
+ .site-footer{border-radius:26px 26px 0 0}
+ .image-dialog{border-radius:22px}
+ .reveal-pending{transition-delay:0ms}
+}
+@media(max-width:350px){
+ .header-contact{padding-inline:9px}
+ .mobile-person .person-name{font-size:20px;white-space:nowrap}
+ .hero-actions{gap:10px}
+ .hero .button,.hero .text-link{font-size:12px;padding-inline:12px;gap:6px}
+ .story-chapter{padding-inline:18px}
+ .story-copy h3{font-size:21px}
+ .start-copy .button{font-size:13px;gap:10px;padding-inline:16px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation:none!important;transition:none!important}
+ .reveal-pending{opacity:1!important;transform:none!important}
+}

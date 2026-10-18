@@ -123,3 +123,16 @@ if (dialog && typeof dialog.showModal === 'function') {
   document.addEventListener('toggle', scheduleNavigation, true);
   updateNavigation();
 })();
+
+// Give native course and FAQ disclosures a small content entrance.
+(() => {
+ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+ document.addEventListener('toggle', event => {
+  const item = event.target;
+  if (reduced.matches || item.tagName !== 'DETAILS' || !item.open) return;
+  if (!item.matches('.course, .faq details')) return;
+  const content = item.querySelector('.course-content') || item.querySelector('p');
+  if (!content || typeof content.animate !== 'function') return;
+  content.animate([{opacity:.3, transform:'translateY(6px)'}, {opacity:1, transform:'translateY(0)'}], {duration:240, easing:'cubic-bezier(0,0,.5,1)'});
+ }, true);
+})();
