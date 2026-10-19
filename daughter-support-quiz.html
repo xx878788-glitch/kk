@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2e6d2">
+  <meta name="description" content="第一眼看見哪隻動物？看看你最想留給孩子哪一種支持。K媽的親子心意小測驗。">
+  <title>你最想留給孩子哪一種支持？｜K媽</title>
+  <style>
+    :root{--paper:#f2e6d2;--cream:#fffbf4;--ink:#3a2717;--soft:#6f5945;--line:#dbc8ad;--accent:#b5764a;--rose:#e8d1c2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.85}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.3;background-image:radial-gradient(#906c5023 .65px,transparent .65px);background-size:7px 7px}
+    a{color:inherit}button{font:inherit}main{max-width:720px;margin:auto;padding:28px 19px 70px;position:relative}
+    .brand{display:flex;align-items:center;justify-content:space-between;gap:12px;letter-spacing:.12em;font-size:13px;font-weight:700;color:#80614a}.brand span:last-child{font-size:11px;font-weight:500;letter-spacing:.08em}
+    .hero{text-align:center;padding:45px 5px 12px}.eyebrow{font-size:12px;letter-spacing:.22em;color:var(--accent);font-weight:700}.hero h1,.section-title,.result-title{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;line-height:1.5}
+    .hero h1{font-size:clamp(27px,5.8vw,42px);margin:13px 0 12px;letter-spacing:.035em}.hero p{color:var(--soft);font-size:15px;margin:0 auto;max-width:480px}
+    .art-wrap{max-width:455px;margin:28px auto 14px;padding:9px;background:#fff9f0;box-shadow:0 9px 32px #5a3a2316;transform:rotate(-.4deg)}.art-wrap img{display:block;width:100%;height:auto}
+    .intro{text-align:center;font-size:15px;color:var(--soft);margin:24px auto 29px}.intro strong{color:var(--ink)}
+    .jump{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:0 0 36px}.jump a{text-align:center;text-decoration:none;background:var(--cream);border:1px solid var(--line);border-radius:50px;padding:9px 5px;font-size:14px;transition:background .2s,transform .2s}.jump a:hover,.jump a:focus-visible{background:#ebd5bd;transform:translateY(-2px)}
+    .section-title{text-align:center;font-size:26px;margin:45px 0 5px}.section-lead{text-align:center;color:var(--soft);font-size:14px;margin:0 0 22px}
+    details{background:var(--cream);border:1px solid var(--line);border-radius:18px;margin:12px 0;overflow:hidden;box-shadow:0 3px 13px #583b2010;scroll-margin-top:18px}details[open]{box-shadow:0 9px 28px #583b2018}
+    summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:15px;padding:17px 21px}summary::-webkit-details-marker{display:none}summary:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+    .letter{font-family:Georgia,serif;font-size:23px;width:47px;height:47px;display:grid;place-items:center;background:#e7d4bb;border-radius:50%;flex:none}.titlebox{flex:1;min-width:0}.animal{display:block;font-weight:700;font-size:17px;line-height:1.45}.hint{display:block;font-size:12px;color:var(--soft);letter-spacing:.04em}.chevron{font-size:24px;color:var(--accent);transition:transform .2s}details[open] .chevron{transform:rotate(45deg)}
+    .inside{border-top:1px solid #ebdccb;padding:23px 25px 27px}.result-label{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.12em}.result-title{font-size:24px;margin:3px 0 14px}.inside p{margin:0 0 14px;font-size:15px}.quote{margin:22px 0;padding:15px 19px;background:#f3e9da;border-left:3px solid var(--accent);font-family:"Noto Serif TC","Songti TC",serif;font-size:17px;line-height:1.8}.try{color:var(--soft);font-size:14px!important}
+    .product{display:grid;grid-template-columns:105px 1fr;gap:16px;margin-top:25px;padding:17px;background:#f4ebde;border:1px solid #e8d6bf;border-radius:14px;align-items:center}.stone{width:105px;height:105px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#e6ddd1,#c6bbb0);overflow:hidden}.stone:before{content:"";height:68px;width:68px;border-radius:48% 52% 57% 43%;transform:rotate(-20deg);background:radial-gradient(circle at 28% 25%,#ffffffb8,transparent 36%),linear-gradient(135deg,#5b6870,#867467 55%,#382d36);box-shadow:inset -9px -8px 16px #1b182844,0 6px 10px #422c2d22}.stone.b{background:linear-gradient(145deg,#e7eadb,#d4ccdb)}.stone.b:before{background:radial-gradient(circle at 30% 26%,#fff9,transparent 35%),linear-gradient(135deg,#9172a4,#b9bb9a 65%,#657e72)}.stone.c{background:linear-gradient(145deg,#f5e7e2,#ebd6d2)}.stone.c:before{background:radial-gradient(circle at 30% 26%,#fff,transparent 36%),linear-gradient(145deg,#e8afbf,#f8dfe0 55%,#bb8596)}.stone.d{background:linear-gradient(145deg,#e2e9ed,#d1d9e3)}.stone.d:before{background:radial-gradient(circle at 28% 22%,#fff,transparent 35%),linear-gradient(140deg,#405c83,#a2bad0 55%,#d6dae2)}
+    .product small{color:var(--accent);font-size:11px;letter-spacing:.08em;font-weight:700}.product h3{font-size:16px;margin:1px 0 2px;line-height:1.4}.product p{font-size:12px;line-height:1.65;color:var(--soft);margin:0 0 9px}.product a{display:inline-block;font-size:13px;font-weight:700;text-decoration:none;color:#8c4e29;border-bottom:1px solid currentColor}.product a:hover{text-decoration:underline}.note{font-size:11px!important;color:#887361;margin:15px 0 0!important}
+    .closing{text-align:center;margin:48px 0 0;padding:32px 23px;background:#ead8c3;border-radius:20px}.closing h2{font-family:"Noto Serif TC","Songti TC",serif;font-size:24px;margin:0 0 11px}.closing p{font-size:15px;margin:0 auto 21px;max-width:460px}.closing a{display:inline-block;text-decoration:none;background:var(--ink);color:#fff8ef;padding:11px 25px;border-radius:40px;font-size:14px;font-weight:700}.closing a:hover{background:#68462d}
+    footer{text-align:center;font-size:12px;color:#866b56;margin-top:32px}footer a{text-decoration:none}
+    @media(max-width:480px){main{padding:19px 15px 48px}.brand span:last-child{font-size:10px}.hero{padding-top:30px}.hero p{font-size:14px}.jump{gap:6px}.jump a{font-size:13px}.inside{padding:21px 19px}.product{grid-template-columns:78px 1fr;gap:12px;padding:12px}.stone{width:78px;height:78px}.stone:before{width:50px;height:50px}.product h3{font-size:15px}}
+    /* 與 K 媽既有測驗頁一致的卡片、標籤及商品版型 */
+    body{background:#f2e6d2;line-height:1.8}body:before{display:none}
+    main.wrap{max-width:680px;padding:0 0 38px;background:#f2e6d2}
+    .brand{display:none}.hero{padding:62px 28px 16px}.hero:before{content:"#親子心意 · 四種支持";display:inline-block;background:#b5764a;color:#fff;border:2px solid #dfc7a0;border-radius:50px;padding:6px 16px;font-size:13px;font-weight:700;box-shadow:4px 4px 0 #3a2717;margin-bottom:22px;letter-spacing:0}
+    .eyebrow{display:none}.hero h1{font-size:28px;font-weight:900;line-height:1.5;margin:0;font-family:"Noto Serif TC",serif}
+    .hero h1 span{background:#e7c79a;border-radius:5px;padding:0 .32em;box-decoration-break:clone}.hero p{margin-top:16px;font-size:14px;color:#806b58}
+    .art-wrap{max-width:none;margin:18px 28px 12px;padding:0;background:none;box-shadow:none;transform:none}.art-wrap img{border:2px solid #dfc7a0;border-radius:16px;box-shadow:4px 4px 0 #3a2717}
+    .intro{margin:13px 28px 25px;font-size:13px}.jump{margin:0 28px 24px}.jump a{background:#fffbf4;border:2px solid #dfc7a0;box-shadow:3px 3px 0 #3a2717;font-weight:700}
+    .section-title{font-size:20px;text-align:left;margin:21px 28px 4px}.section-title:before{content:"點開你選的字母";display:table;background:#b5764a;color:#fff;border:2px solid #dfc7a0;border-radius:50px;padding:4px 14px;font:700 12px "Noto Sans TC",sans-serif;box-shadow:4px 4px 0 #3a2717;margin-bottom:20px}.section-lead{text-align:left;margin:0 28px 25px;font-size:14px}
+    details{margin:0 28px 18px;border:3px solid #dfc7a0;border-radius:16px;box-shadow:4px 4px 0 #3a2717;background:#fffbf4}details[open]{box-shadow:7px 7px 0 #3a2717}summary{padding:18px 20px;gap:14px}.letter{width:34px;height:34px;font:700 16px Inter,sans-serif;background:#e7c79a;border:2px solid #dfc7a0}.animal{font-size:16.5px}.hint{font-size:12px}.chevron{font-size:22px}
+    .inside{border-top:2px dashed #dfc7a0;margin:0 20px;padding:17px 0 20px}.result-label{font-size:13px}.result-title{font-size:17px;font-weight:900;color:#b5764a;margin:4px 0 16px}.inside p{font-size:14.5px}.inside>p:nth-of-type(1):before,.inside>p:nth-of-type(2):before,.inside>.try:before{display:block;color:#b5764a;font-size:13px;font-weight:700;margin-bottom:5px}.inside>p:nth-of-type(1):before{content:"妳心裡的那份牽掛"}.inside>p:nth-of-type(2):before{content:"妳最想給孩子的支持"}.inside>.try:before{content:"這週可以試的一件小事"}.quote{font-size:15px;font-weight:700;margin:14px 0 18px;padding:12px 16px;border-left:4px solid #b5764a;background:#fdf5ea;border-radius:8px}.try{font-size:14px!important}
+    .product{display:block;background:#fdf5ea;border:2px solid #dfc7a0;border-radius:16px;box-shadow:4px 4px 0 #3a2717;margin-top:22px;padding:18px 20px}.product small{display:inline-block;background:#e7c79a;border:2px solid #dfc7a0;border-radius:50px;padding:3px 13px;color:#3a2717;font-size:11.5px;margin-bottom:13px}.gem-head{display:flex;flex-direction:row-reverse;align-items:center;gap:14px}.gem-head-text{flex:1;min-width:0}.gem-photo{width:clamp(88px,25vw,108px);height:auto;aspect-ratio:1;object-fit:cover;border:2px solid #dfc7a0;border-radius:12px;box-shadow:4px 4px 0 #3a2717}.product h3{font:900 17.5px/1.5 "Noto Serif TC",serif;color:#b5764a;margin:0}.product p{font-size:14px;line-height:1.85;margin:13px 0 17px;color:#594536}.product .gem-stones{font-size:12px;margin:4px 0 0;color:#806b58}.product a{border:2px solid #dfc7a0;border-radius:50px;background:#b5764a;color:#fff;text-decoration:none;box-shadow:4px 4px 0 #3a2717;padding:10px 26px;font-size:14px}.product a:hover{background:#965b36}
+    .note{margin:18px 28px!important;text-align:center;font-size:12px!important}.closing{margin:24px 28px 0;padding:28px 24px;background:#fffbf4;border:3px solid #dfc7a0;box-shadow:7px 7px 0 #3a2717;border-radius:24px}.closing h2{font-size:21px}.closing p{font-size:14.5px}.closing a{background:#b5764a;border:2px solid #dfc7a0;box-shadow:7px 7px 0 #3a2717;font-size:16px;padding:13px 30px}.closing a:hover{background:#965b36}footer{margin-top:34px;color:#b5764a;font-weight:700}
+    .art-wrap{height:390px;overflow:hidden;border:2px solid #dfc7a0;border-radius:16px;box-shadow:4px 4px 0 #3a2717;background:#fff7eb}.art-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 55%;border:0;border-radius:0;box-shadow:none}
+    .jump{display:none}.hero{padding-bottom:24px}.hero p{max-width:none}.section-title{margin-top:8px}
+    .transition{text-align:center;margin:31px 28px 18px}.transition span{display:inline-block;padding:8px 20px;border:2px solid #dfc7a0;border-radius:50px;box-shadow:4px 4px 0 #3a2717;background:#fffbf4;font-size:14px;font-weight:700}
+    .bridge-card,.about-card{margin:18px 28px;padding:26px 24px;border:3px solid #dfc7a0;border-radius:24px;box-shadow:7px 7px 0 #3a2717;background:#fffbf4}.bridge-card p,.about-card p{margin:0 0 13px;font-size:15px;line-height:1.9}.bridge-card p:last-child,.about-card p:last-child{margin-bottom:0}.bridge-card strong,.about-card mark{background:#e7c79a;color:#3a2717;border-radius:5px;padding:0 .25em}.about-card{background:#fdf5ea}.about-card h2{margin:0 0 13px;font:900 21px/1.5 "Noto Serif TC",serif}
+    .side-cta{display:none}@media(min-width:1120px){.side-cta{display:block;position:fixed;top:140px;right:max(20px,calc((100vw - 680px)/2 - 220px));width:200px;z-index:20;background:#fffbf4;border:3px solid #dfc7a0;border-radius:24px;box-shadow:7px 7px 0 #3a2717;padding:18px;text-align:center}.side-cta small{color:#b5764a;letter-spacing:.1em;font-weight:700}.side-cta h2{font:900 16px/1.5 "Noto Serif TC",serif}.side-cta a{display:block;background:#b5764a;color:white;text-decoration:none;border:2px solid #dfc7a0;border-radius:50px;padding:10px;box-shadow:4px 4px 0 #3a2717;font-size:14px;font-weight:700}}
+    @media(min-width:640px){.gem-photo{width:174px}.art-wrap{height:475px}}
+    @media(max-width:480px){.hero{padding:45px 20px 18px}.hero h1{font-size:25px}.art-wrap{margin:5px 20px 12px;height:325px}.intro{margin:14px 20px 24px}.section-title{margin-left:20px;margin-right:20px}.section-lead{margin-left:20px;margin-right:20px}details{margin-left:20px;margin-right:20px}summary{padding:16px}.inside{margin:0 16px}.product{padding:16px}.gem-photo{width:88px}.note{margin-left:20px!important;margin-right:20px!important}.closing,.bridge-card,.about-card{margin-left:20px;margin-right:20px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<aside class="side-cta"><small>FOREST CRYSTAL</small><h2>照顧孩子時<br>也記得留一點溫柔給自己</h2><a href="https://omnicrystal.store/shop/?utm_source=Karen&amp;utm_medium=message" target="_blank" rel="noopener noreferrer">看看水晶 →</a></aside>
+<main class="wrap">
+  <header class="brand"><span>K 媽 · 給親愛的女兒</span><span>一份給爸媽的小測驗</span></header>
+  <section class="hero" aria-labelledby="page-title">
+    <div class="eyebrow">THE LOVE WE LEAVE WITH THEM</div>
+    <h1 id="page-title">當孩子慢慢長大<br><span>妳最想留給她什麼？</span></h1>
+    <p>第一眼看見哪隻動物？<br>從 A 到 D，看看妳想給孩子的那份支持</p>
+  </section>
+  <figure class="art-wrap"><img src="daughter-support-quiz/guardian-animal-quiz.webp" alt="第一眼看見哪隻動物的視覺測驗圖，選項為 A 鹿、B 鳥、C 兔子、D 貓" width="1122" height="1402"></figure>
+  <p class="intro">選好了嗎？<strong>點開妳的答案</strong>，看看妳最想給孩子的那份愛。</p>
+  <nav class="jump" aria-label="選擇動物"><a href="#A">A 鹿</a><a href="#B">B 鳥</a><a href="#C">C 兔子</a><a href="#D">D 貓</a></nav>
+  <h2 class="section-title">哪隻動物，先走進妳眼裡？</h2>
+  <p class="section-lead">每個答案，都是一種很真實的愛。</p>
+
+  <details id="A">
+    <summary><span class="letter">A</span><span class="titlebox"><span class="animal">鹿｜安穩的守護</span><span class="hint">妳希望她知道：身後一直有人</span></span><span class="chevron" aria-hidden="true">+</span></summary>
+    <div class="inside"><div class="result-label">妳最想留給孩子的支持</div><h3 class="result-title">讓她安心往前走</h3>
+      <p>妳不是想替孩子擋掉所有風雨，而是希望她知道，就算跌倒、迷路，身後還有人願意接住她。</p><p>她慢慢長大，妳也在練習放手。妳給的安全感，是「妳可以去試，我會在這裡」。</p>
+      <div class="quote">「往前走吧，累了就回來。我一直都在。」</div><p class="try">今天可以試試：當孩子遇到難題，先問她「妳想要我陪妳想，還是先聽妳說？」</p>
+      <div class="product"><small>給自己的一個日常提醒</small><div class="gem-head"><img class="gem-photo" src="daughter-support-quiz/product-1.webp" alt="光輝歲月水晶手鍊" loading="lazy"><div class="gem-head-text"><h3>光輝歲月</h3><p class="gem-stones">拉長石 × 紅虎眼石 × 銀曜石 × 茶水晶</p></div></div><p>沉靜的灰棕色調，像一句穩穩的「我在」。也提醒自己，陪伴孩子時不必一個人扛下所有事。</p><a href="https://omnicrystal.store/shop/destiny-crystals/zodiac/d8/?utm_source=Karen&amp;utm_medium=message" target="_blank" rel="noopener noreferrer">看看這一款 →</a></div>
+    </div>
+  </details>
+  <details id="B">
+    <summary><span class="letter">B</span><span class="titlebox"><span class="animal">鳥｜被信任的自由</span><span class="hint">妳希望她敢飛，敢選自己的路</span></span><span class="chevron" aria-hidden="true">+</span></summary>
+    <div class="inside"><div class="result-label">妳最想留給孩子的支持</div><h3 class="result-title">讓她有勇氣做自己</h3>
+      <p>妳知道，孩子總有一天會走到妳看不見的地方。捨不得是真的，但比起留住她，妳更希望她相信自己有能力去闖。</p><p>妳的愛不是替她決定方向，而是在她回頭時，給她一個肯定的眼神。</p>
+      <div class="quote">「去看看妳喜歡的世界。媽媽相信妳。」</div><p class="try">今天可以試試：聽她說一個自己的決定，先問「妳怎麼想的？」再分享妳的意見。</p>
+      <div class="product"><small>給自己的一個日常提醒</small><div class="gem-head"><img class="gem-photo" src="daughter-support-quiz/product-4.webp" alt="幸運女神水晶手鍊" loading="lazy"><div class="gem-head-text"><h3>幸運女神</h3><p class="gem-stones">紫水晶 × 綠螢石 × 白水晶</p></div></div><p>紫綠與透明色澤，當作一句溫柔提醒：祝福孩子，也相信她有能力走自己的路。</p><a href="https://omnicrystal.store/shop/destiny-crystals/zodiac/lucky/?utm_source=Karen&amp;utm_medium=message" target="_blank" rel="noopener noreferrer">看看這一款 →</a></div>
+    </div>
+  </details>
+  <details id="C">
+    <summary><span class="letter">C</span><span class="titlebox"><span class="animal">兔子｜被理解的溫柔</span><span class="hint">妳希望她脆弱時，也能放心做自己</span></span><span class="chevron" aria-hidden="true">+</span></summary>
+    <div class="inside"><div class="result-label">妳最想留給孩子的支持</div><h3 class="result-title">讓她不用一直逞強</h3>
+      <p>當孩子說「我沒事」，妳也許聽得出她其實有點難過。妳最想給她的，不是一套立刻變好的方法，而是一個不用假裝堅強的地方。</p><p>妳願意陪她慢慢說，也願意在她還不想說時，安靜待在旁邊。</p>
+      <div class="quote">「在媽媽面前，妳不用每次都很勇敢。」</div><p class="try">今天可以試試：說一句「妳想說的時候我都在」，然後把說話的時間交還給她。</p>
+      <div class="product"><small>給自己的一個日常提醒</small><div class="gem-head"><img class="gem-photo" src="daughter-support-quiz/product-3.webp" alt="伊莉莎白女王水晶手鍊" loading="lazy"><div class="gem-head-text"><h3>伊莉莎白女王</h3><p class="gem-stones">八角粉晶 × 白阿賽 × 粉水晶</p></div></div><p>柔和粉色呼應被理解、被珍惜的感覺。留一點同樣的溫柔，也給正在學著當媽媽的自己。</p><a href="https://omnicrystal.store/shop/destiny-crystals/five-elements/a4/?utm_source=Karen&amp;utm_medium=message" target="_blank" rel="noopener noreferrer">看看這一款 →</a></div>
+    </div>
+  </details>
+  <details id="D">
+    <summary><span class="letter">D</span><span class="titlebox"><span class="animal">貓｜能回來的地方</span><span class="hint">妳希望她擁有自己的世界，也有一個家</span></span><span class="chevron" aria-hidden="true">+</span></summary>
+    <div class="inside"><div class="result-label">妳最想留給孩子的支持</div><h3 class="result-title">給她空間，也留一盞燈</h3>
+      <p>妳明白親近不代表時時刻刻黏在一起。孩子需要自己的步調，也需要知道：不管多久沒說心事，回頭時妳還是願意聽。</p><p>妳給她的支持，是尊重她的距離，也把家的門一直留著。</p>
+      <div class="quote">「有妳自己的生活很好，想回來的時候，家都在。」</div><p class="try">今天可以試試：傳一句不需要立刻回覆的「有空回來吃飯，想聊什麼我都聽」。</p>
+      <div class="product"><small>給自己的一個日常提醒</small><div class="gem-head"><img class="gem-photo" src="daughter-support-quiz/product-2.webp" alt="感覺很好水晶手鍊" loading="lazy"><div class="gem-head-text"><h3>感覺很好</h3><p class="gem-stones">白水晶貔貅 × 青金石 × 藍月光</p></div></div><p>藍白色系有安靜的感覺，提醒妳：不用緊抓著孩子，彼此也能維持舒服的靠近。</p><a href="https://omnicrystal.store/shop/destiny-crystals/five-elements/a7/?utm_source=Karen&amp;utm_medium=message" target="_blank" rel="noopener noreferrer">看看這一款 →</a></div>
+    </div>
+  </details>
+  <p class="note">這是一個分享心情的趣味小測驗，沒有標準答案，也不是心理診斷。</p>
+  <div class="transition"><span>愛她，也記得照顧自己 ↓</span></div>
+  <section class="bridge-card"><p>四隻動物，讓我們看見<br><strong>四種想留給孩子的支持</strong></p><p>她會慢慢長大，有一天走向自己的世界。媽媽能給的愛，也會從牽緊她的手，變成陪她找到自己的路。</p></section>
+  <section class="about-card"><h2>Hi，我是 <mark>K媽</mark></h2><p>我是一個媽媽，也用 AI ＋ 自媒體記錄生活、經營內容。</p><p>女兒長大的每一步，都讓我重新學習怎麼愛她。希望這份小測驗，也陪妳聽見自己心裡想說的話。</p></section>
+  <section class="closing"><h2>孩子長大，愛也會換一種模樣</h2><p>不管妳選了哪個答案，願我們都能用自己的方式，讓孩子知道：她一直被愛著。</p><a href="https://omnicrystal.store/shop/?utm_source=Karen&amp;utm_medium=message" target="_blank" rel="noopener noreferrer">看看 K 媽的水晶選物 ↗</a></section>
+  <footer><a href="https://www.instagram.com/lovekaren0316/" target="_blank" rel="noopener noreferrer">@lovekaren0316</a> · 給每一位正在學習愛與放手的媽媽</footer>
+</main>
+<script>
+  function showAnswer(){const key=(new URLSearchParams(location.search).get('answer')||location.hash.slice(1)).toUpperCase();if(!/^[ABCD]$/.test(key))return;const selected=document.getElementById(key);if(selected){selected.open=true;if(location.hash&&document.readyState==='complete')selected.scrollIntoView({block:'start'});}}
+  showAnswer();window.addEventListener('hashchange',showAnswer);
+</script>
+</body>
+</html>
