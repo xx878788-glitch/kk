@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="第一眼最想走進哪個畫面，測出妳在感情裡最需要的安全感">
+  <title>K媽｜感情裡的安全感測驗</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23B5764A'/%3E%3Cpath d='M8 10h16v13H8zM8 10l8 7 8-7' fill='none' stroke='%23FFFBF4' stroke-width='2'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f2e6d2;
+      --paper: #fffbf4;
+      --ink: #3a2717;
+      --accent: #b5764a;
+      --gold: #e7c79a;
+      --border: #dfc7a0;
+      --muted: #765e48;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 1rem/1.9 system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    }
+
+    main {
+      max-width: 680px;
+      margin: auto;
+      padding: 30px 24px 40px;
+    }
+
+    h1, h2, h3, blockquote {
+      font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+      line-height: 1.55;
+      margin: 18px auto 8px;
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      line-height: 1.6;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin: 12px 0 8px;
+    }
+
+    p { margin: 10px 0 20px; }
+
+    button, a { touch-action: manipulation; }
+
+    button {
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .tag {
+      display: inline-block;
+      border-radius: 30px;
+      padding: 4px 14px;
+      background: var(--accent);
+      color: white;
+      font-size: .875rem;
+      font-weight: 700;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .choose-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .quiz-art {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 4px 4px 0 var(--border);
+    }
+
+    .choose-panel h2 { font-size: 1.35rem; }
+
+    .opts {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pick {
+      display: flex;
+      width: 100%;
+      text-align: left;
+      align-items: center;
+      gap: 14px;
+      border: 2px solid var(--border);
+      background: var(--paper);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .pick[aria-pressed="true"] {
+      background: var(--gold);
+      border-color: var(--accent);
+    }
+
+    .letter {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gold);
+      font-weight: 800;
+    }
+
+    .pick[aria-pressed="true"] .letter {
+      background: var(--accent);
+      color: white;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 2px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      margin: 24px 0;
+      box-shadow: 5px 5px 0 var(--ink);
+    }
+
+    .label {
+      color: var(--accent);
+      font-size: .9rem;
+      font-weight: 750;
+      margin-bottom: 4px;
+    }
+
+    .long-copy {
+      white-space: pre-line;
+      line-height: 2;
+    }
+
+    .long-copy + .label { margin-top: 28px; }
+
+    #action {
+      background: #fdf5ea;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--accent);
+      background: #fdf5ea;
+      border-radius: 8px;
+      margin: 20px 0;
+      padding: 16px 20px;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .quote-wrap {
+      position: relative;
+      padding-top: 12px;
+    }
+
+    .vignette {
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      margin: 0 12px -8px auto;
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--accent);
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.5rem;
+    }
+
+    .gemhead {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .gemhead img {
+      width: 120px;
+      height: 150px;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      background: #f4eadc;
+    }
+
+    .gemhead div {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .gemhead h3 { color: var(--accent); }
+
+    .btn {
+      display: inline-block;
+      max-width: 100%;
+      border: 2px solid var(--border);
+      border-radius: 30px;
+      background: var(--accent);
+      color: white;
+      padding: 12px 26px;
+      text-decoration: none;
+      font-weight: 750;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .secondary {
+      margin-top: 20px;
+      padding: 8px;
+      border: 0;
+      background: none;
+      font-size: .9rem;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    .coupon {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border: 2px dashed var(--accent);
+      border-radius: 20px;
+      background: var(--gold);
+      padding: 16px 20px;
+      margin: 22px 0;
+    }
+
+    .coupon p {
+      flex: 1;
+      min-width: 180px;
+      margin: 0;
+    }
+
+    .coupon strong {
+      color: var(--accent);
+      font-family: serif;
+      font-size: 1.2rem;
+      letter-spacing: .04em;
+    }
+
+    .coupon button {
+      border: 2px solid var(--accent);
+      border-radius: 24px;
+      background: var(--paper);
+      color: var(--accent);
+      padding: 7px 18px;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .more-crystals {
+      color: var(--muted);
+      font-size: .95rem;
+      margin: 22px 0 30px;
+    }
+
+    .more-crystals a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    details {
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      background: var(--paper);
+      margin: 12px 0;
+      padding: 14px 18px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .shop {
+      text-align: center;
+      border-top: 2px solid var(--border);
+      margin-top: 35px;
+      padding-top: 25px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--accent);
+      font-size: .9rem;
+      margin-top: 24px;
+    }
+
+    .quiz-disclaimer {
+      max-width: 580px;
+      text-align: center;
+      color: #8a7763;
+      font-size: .875rem;
+      line-height: 1.8;
+      margin: 20px auto 0;
+      padding: 0 8px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    section[hidden] { display: none !important; }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    @media (min-width: 800px) {
+      main:has(#intro:not([hidden])) { max-width: 1080px; }
+    }
+
+    @media (max-width: 700px) {
+      .choose-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .quiz-art {
+        max-width: 460px;
+        margin: auto;
+      }
+
+      .choose-panel {
+        width: 100%;
+        max-width: 460px;
+        margin: auto;
+      }
+    }
+
+    @media (max-width: 380px) {
+      main { padding: 24px 16px; }
+      .card { padding: 20px; }
+      .gemhead { gap: 12px; }
+      .gemhead img {
+        width: 90px;
+        height: 120px;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .pick, .btn { transition: transform .2s; }
+      .pick:hover, .btn:hover { transform: translateY(-2px); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="intro">
+      <header class="hero">
+        <span class="tag">K媽 · 感情裡的安全感測驗</span>
+        <h1>第一眼最想走進哪個畫面？</h1>
+        <p class="muted">測出妳在感情裡最需要的安全感</p>
+      </header>
+
+      <div class="choose-layout">
+        <div>
+          <img class="quiz-art" src="quiz.webp" alt="四個選項，亮著燈的家、留好的晚餐、並肩的沙發、兩個旅行箱">
+        </div>
+        <div class="choose-panel">
+          <h2 class="sr-only">選一個最想走進的畫面</h2>
+          <div id="options" class="opts"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" hidden>
+      <span class="tag">給現在的妳，一封短信</span>
+      <h1 id="result-title" tabindex="-1"></h1>
+      <p id="result-pick" class="muted"></p>
+
+      <div class="quote-wrap">
+        <span class="vignette" aria-hidden="true">月</span>
+        <blockquote id="quote"></blockquote>
+      </div>
+
+      <div class="card">
+        <div class="label">妳選的，其實是一種安全感</div>
+        <p class="long-copy" id="reading"></p>
+
+        <div class="label">這份需要，在說什麼</div>
+        <p class="long-copy" id="needs"></p>
+
+        <div class="label">妳容易卡住的地方</div>
+        <p class="long-copy" id="patterns"></p>
+
+        <div class="label">讓安全感回到日常，可以怎麼做</div>
+        <p class="long-copy" id="guidance"></p>
+
+        <div class="label">今天就能開始的三件小事</div>
+        <p class="long-copy" id="action"></p>
+
+        <div class="label">留一個問題給自己</div>
+        <p class="long-copy" id="reflect"></p>
+
+        <div class="label">也送給自己這句話</div>
+        <p class="long-copy" id="self"></p>
+      </div>
+
+      <div class="label">FOREST CRYSTAL · 森靈水晶</div>
+      <h2>留一個提醒在手上</h2>
+      <p id="bridge"></p>
+
+      <div class="card">
+        <div class="gemhead">
+          <img id="gem-img" alt="" loading="lazy">
+          <div>
+            <h3 id="gem-name"></h3>
+            <p id="gem-stones" class="muted"></p>
+          </div>
+        </div>
+        <p class="long-copy" id="gem-why"></p>
+        <a class="btn" id="gem-link" href="#" target="_blank" rel="noopener noreferrer">看看這一款</a>
+      </div>
+
+      <div class="coupon">
+        <p>使用專屬折扣碼「<strong>Karen</strong>」可折 $100</p>
+        <button id="copy-code" type="button">複製</button>
+        <span id="copy-status" class="sr-only" aria-live="polite"></span>
+      </div>
+
+      <p class="more-crystals">
+        想再慢慢看看，也可以
+        <a id="more-link" href="https://omnicrystal.store/shop/?utm_source=Karen&utm_medium=message" target="_blank" rel="noopener noreferrer">看看更多水晶</a>
+      </p>
+
+      <h2>也看看另外三種安全感</h2>
+      <div id="others"></div>
+
+      <div class="card">
+        <div class="label">最後想跟妳說</div>
+        <p class="long-copy">測驗不是替妳定義一段感情
+它只是幫妳看見，原來自己一直在等什麼
+
+當妳更懂自己的需要，就不必再用猜的確認愛</p>
+      </div>
+
+      <div class="shop">
+        <p class="muted">想再選一次，也許妳會看見另一個自己</p>
+        <button class="secondary" id="restart" type="button">重新測一次</button>
+      </div>
+    </section>
+
+    <footer>@lovekaren0316</footer>
+    <p class="quiz-disclaimer">本測驗為自我探索內容，不是心理診斷，也不取代專業諮詢</p>
+  </main>
+
+  <script>
+    const results = [
+      {
+        letter: "A",
+        option: "亮著燈的家",
+        title: "妳想要一個能回去的地方",
+        quote: "妳要的愛不必很熱鬧，只要不會忽然消失",
+        reading: "妳在意的，是關係裡那份可以預期的安心\n\n累的時候有人接住，沉默的時候也知道對方還在",
+        needs: "妳最需要的是歸屬感\n\n一個不必反覆確認，也知道自己有位置的關係",
+        patterns: "關係一有距離，妳容易先猜是不是自己做錯了\n\n有時為了留住熟悉感，也會讓自己忍耐太久",
+        guidance: "安全感不是永遠不吵架，而是吵完以後願意回來\n\n固定報平安、答應的事有做到、情緒過後還能好好談，這些小事會慢慢把家蓋起來",
+        action: "① 說出妳今天真正的感受\n不用解釋很多，先誠實一句就好\n\n② 約定一個固定的聯絡時間\n讓等待不必一直靠猜\n\n③ 看一件事有沒有被做到\n比起漂亮的承諾，留意穩定的行動",
+        reflect: "在一段關係裡，什麼時刻會讓妳真的覺得，我可以回來？",
+        self: "先把心安頓好，再走進一段關係",
+        bridge: "當心裡又開始漂浮，可以留一個溫柔的提醒，安全感也能先從自己開始",
+        gem: "幸福家園",
+        stones: "白水晶 × 灰月光 × 藍月光",
+        gemWhy: "白水晶與月光石的柔和色澤，像替自己留一盞燈\n\n它不會替妳保證一段關係，卻可以提醒妳，先把心安頓好，再走進愛裡",
+        image: "https://omnicrystal.store/wp-content/uploads/2025/12/%E6%B0%B4%E6%99%B6%E5%95%86%E5%93%81%E5%9C%96-21-scaled.jpg",
+        url: "https://omnicrystal.store/shop/destiny-crystals/zodiac/d2/?utm_source=Karen&utm_medium=message",
+        category: "歸屬感"
+      },
+      {
+        letter: "B",
+        option: "留好的晚餐",
+        title: "妳想被好好放在心上",
+        quote: "那些細小的惦記，對妳來說就是愛",
+        reading: "妳不一定要盛大的浪漫\n\n妳在意的是，對方有沒有記得妳的習慣，也有沒有注意妳沒說出口的累",
+        needs: "妳最需要的是被重視\n\n想知道自己不是順便，而是一直被放在心裡",
+        patterns: "妳很會照顧人，卻常把自己的需要藏起來\n\n等到失望累積，才用沉默確認對方到底在不在乎",
+        guidance: "把期待說清楚，不會讓愛變得不浪漫\n\n被愛不需要靠猜，也不用靠委屈交換，讓對方知道妳在意的是什麼，才有機會真正靠近妳",
+        action: "① 說一件妳希望被記得的小事\n不用等對方自己發現\n\n② 接住一次別人對妳的好\n先說謝謝，不急著回報\n\n③ 今天也替自己留一份\n把自己放進被照顧的名單",
+        reflect: "如果不怕被嫌麻煩，妳最想讓對方替妳記得什麼？",
+        self: "在等別人照顧以前，也把自己放進被照顧的名單",
+        bridge: "妳總是記得別人的需要，也可以留一個提醒，別把自己排在最後",
+        gem: "粉水晶球",
+        stones: "粉水晶｜開啟心輪，吸引美好人緣與幸福",
+        gemWhy: "粉水晶常被用來象徵自我接納與溫柔\n\n把它放在看得見的地方，提醒自己，在等別人照顧以前，也要把自己放進被照顧的名單",
+        image: "https://omnicrystal.store/wp-content/uploads/2026/01/5-scaled.jpg",
+        url: "https://omnicrystal.store/shop/crystal-bowl/crystal-sphere/ball1/?utm_source=Karen&utm_medium=message",
+        category: "被重視"
+      },
+      {
+        letter: "C",
+        option: "並肩的沙發",
+        title: "妳想要一段不費力的陪伴",
+        quote: "安靜地待在一起，也是一種很深的靠近",
+        reading: "妳不需要每天說很多話，也不追求轟轟烈烈\n\n能待在同一個空間，各做各的，仍然知道彼此都在，對妳來說就很安心",
+        needs: "妳最需要的是穩定陪伴\n\n平凡、固定、不用猜的相處，最能讓妳放鬆",
+        patterns: "妳太習慣安靜相處，也可能把重要的話一起省略\n\n久了，兩個人都以為對方懂，真正的感受卻沒有被說出來",
+        guidance: "保留並肩的舒服，也替關係留一點說話的時間\n\n不用每次都談很深，只要偶爾問問最近好不好，別讓沉默替你們做決定",
+        action: "① 一起做一件沒有目的的小事\n散步、吃飯、看一集劇都可以\n\n② 問一句最近還好嗎\n問完先聽，不急著解決\n\n③ 說出一件妳感謝的日常\n讓習慣不會變成理所當然",
+        reflect: "妳想要的陪伴，是有人一直在，還是有人真的懂？",
+        self: "陪伴需要時間，也需要一次次明確的選擇",
+        bridge: "當妳想守住一段安穩的陪伴，可以留一個提醒，把沉默變成溫柔，也把在乎說出來",
+        gem: "朝暮相守",
+        stones: "紫金珠砂 × 紫水晶 × 紅金珠砂 × 紅虎眼",
+        gemWhy: "深紫與瑰紅帶著清醒、勇氣與長久守護的意象\n\n戴上它時提醒自己，陪伴需要時間，也需要一次次明確的選擇",
+        image: "https://omnicrystal.store/wp-content/uploads/2026/03/WH_07252-1-scaled.jpg",
+        url: "https://omnicrystal.store/shop/destiny-crystals/five-elements/mu/?utm_source=Karen&utm_medium=message",
+        category: "穩定陪伴"
+      },
+      {
+        letter: "D",
+        option: "兩個旅行箱",
+        title: "妳想一起前進，也想保有自己",
+        quote: "愛對妳來說，是並肩出發",
+        reading: "妳喜歡有方向、有變化的關係\n\n妳希望兩個人能看見更大的世界，也能尊重彼此的節奏",
+        needs: "妳最需要的是自由同行\n\n兩個人可以一起走，也不需要失去各自原本的樣子",
+        patterns: "妳很怕被限制，連需要依靠的時候也會先往後退\n\n有時把脆弱藏成獨立，讓對方不知道該怎麼靠近",
+        guidance: "自由不等於什麼都自己扛，也能包含依靠\n\n把想去的方向說出來，把需要的空間講清楚，對方才有機會和妳一起走",
+        action: "① 說一個妳真正想完成的計畫\n讓對方認識正在前進的妳\n\n② 說清楚妳需要的空間\n不要用突然消失代替界線\n\n③ 練習開口請人幫一次忙\n獨立和依靠可以同時存在",
+        reflect: "如果愛不需要妳犧牲自己，妳最想和對方一起走去哪裡？",
+        self: "說出方向，也為自己的選擇負責",
+        bridge: "當妳想一起前進又不想失去自己，可以留一個提醒，清楚表達也是一種靠近",
+        gem: "夢想傳聲",
+        stones: "海藍寶 × 金耀石",
+        gemWhy: "海藍寶帶著清楚表達的意象，金耀石則像把腳步放回地面\n\n戴上它時提醒自己，說出方向，也為自己的選擇負責",
+        image: "https://omnicrystal.store/wp-content/uploads/2026/04/%E5%95%86%E5%93%81%E5%9C%96rescale-1-scaled.jpg",
+        url: "https://omnicrystal.store/shop/destiny-crystals/zodiac/c3/?utm_source=Karen&utm_medium=message",
+        category: "自由同行"
+      }
+    ]
+
+    const $ = id => document.getElementById(id)
+
+    function showResult(index) {
+      const data = results[index]
+      if (!data) return
+
+      $("intro").hidden = true
+      $("result").hidden = false
+      $("result-title").textContent = data.title
+      $("result-pick").textContent = `妳選了 ${data.letter}｜${data.option}`
+      $("quote").textContent = data.quote
+
+      for (const key of ["reading", "needs", "patterns", "guidance", "action", "reflect", "self", "bridge"]) {
+        $(key).textContent = data[key]
+      }
+
+      $("gem-name").textContent = data.gem
+      $("gem-stones").textContent = data.stones
+      $("gem-why").textContent = data.gemWhy
+      $("gem-img").src = data.image
+      $("gem-img").alt = `${data.gem}商品圖`
+      $("gem-link").href = data.url
+      $("more-link").href = "https://omnicrystal.store/shop/?utm_source=Karen&utm_medium=message"
+      $("more-link").textContent = "看看更多水晶款式 →"
+      $("copy-code").textContent = "複製"
+      $("copy-status").textContent = ""
+
+      const others = $("others")
+      others.replaceChildren()
+
+      results.forEach((item, itemIndex) => {
+        if (itemIndex === index) return
+
+        const details = document.createElement("details")
+        const summary = document.createElement("summary")
+        const quote = document.createElement("p")
+        const button = document.createElement("button")
+
+        summary.textContent = `${item.letter}｜${item.title}`
+        quote.textContent = item.quote
+        button.className = "secondary"
+        button.type = "button"
+        button.textContent = "看完整解析"
+        button.addEventListener("click", () => showResult(itemIndex))
+
+        details.append(summary, quote, button)
+        others.append(details)
+      })
+
+      window.scrollTo({ top: 0, behavior: "instant" })
+      $("result-title").focus()
+    }
+
+    results.forEach((item, index) => {
+      const button = document.createElement("button")
+      const letter = document.createElement("span")
+      const label = document.createElement("span")
+
+      button.className = "pick"
+      button.type = "button"
+      button.setAttribute("aria-pressed", "false")
+      letter.className = "letter"
+      letter.textContent = item.letter
+      label.textContent = item.option
+      button.append(letter, label)
+      button.addEventListener("click", () => showResult(index))
+      $("options").append(button)
+    })
+
+    $("restart").addEventListener("click", () => {
+      $("result").hidden = true
+      $("intro").hidden = false
+      window.scrollTo({ top: 0, behavior: "instant" })
+      $("options").querySelector("button")?.focus()
+    })
+
+    $("copy-code").addEventListener("click", async () => {
+      const button = $("copy-code")
+
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText("Karen")
+        } else {
+          const field = document.createElement("textarea")
+          field.value = "Karen"
+          field.style.position = "fixed"
+          field.style.opacity = "0"
+          document.body.append(field)
+          field.select()
+          const copied = document.execCommand("copy")
+          field.remove()
+          if (!copied) throw new Error("copy unavailable")
+        }
+
+        button.textContent = "已複製"
+        $("copy-status").textContent = "折扣碼 Karen 已複製"
+      } catch {
+        button.textContent = "Karen"
+        $("copy-status").textContent = "請手動複製折扣碼 Karen"
+      }
+    })
+  </script>
+</body>
+</html>
